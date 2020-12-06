@@ -108,4 +108,4 @@ published by the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version. 
 
 # #Thanks
-https://telegra.ph/file/a6874b4cde264dd378187.jpg
+<p align="center"><a href="https://t.me/mbbs_lover"><img src="https://telegra.ph/file/a6874b4cde264dd378187.jpg" width="4000"></a></p> 
