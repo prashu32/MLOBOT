@@ -1,6 +1,6 @@
 <p align="center"><a href="https://t.me/spamreporterr"><img src="https://telegra.ph/file/6a0749dec068cf9e47b82.jpg" width="5000"></a></p> 
-<h2 align="center"><b>💛MLO㋛︎-USERBOT❤️</b></h2>
-<h4 align="center">ᗩ ᑭOᗯᗴᖇᖴᑌᒪ, ՏᗰᗩᖇT ᗩᑎᗪ ᖇOᗰᗩᑎTIᑕ ᑌՏᗴᖇᗷOT Iᑎ TᗴᒪᗴTᕼOᑎ.</h4>
+<h2 align="center"><b>💛MLO㋛︎USERBOT❤️</b></h2>
+<h4 align="center">A POWERFUL, SMART AND ROMANTIC USERBOT IN TELTHON.</h4>
 
 
 
