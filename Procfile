@@ -1,0 +1,1 @@
+telebot: python -m telebot
