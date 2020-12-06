@@ -19,7 +19,7 @@
 
 
 
-# Method
+# METHOD
 
 #### A Simple and easy video will be provided soon if people took interest. Else see Infotel's videos or contact [@Mbbs_lover](https://t.me/mbbs_lover) on telegram
 
@@ -27,7 +27,7 @@
 
 
 
-# Deploying To Heroku
+# DEPLOYING TO HEROKU
 
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/prashu32/MLOBOT)
 
@@ -85,7 +85,7 @@ python3 -m MLOBŌT
 
 
 
-## Mandatory Vars
+## MANDATORY VARS
 ```
 [+] Only two of the environment variables are mandatory.
 
@@ -98,7 +98,7 @@ python3 -m MLOBŌT
 ```
 
 
-# License
+# LICENSE
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
 
 MLO Userbot is Free Software: You can use, study share and improve it at your
@@ -107,5 +107,5 @@ will. Specifically you can redistribute and/or modify it under the terms of the
 published by the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version. 
 
-# #Thanks
+# SPECIAL THANKS TO
 <p align="center"><a href="https://t.me/mbbs_lover"><img src="https://telegra.ph/file/a6874b4cde264dd378187.jpg" width="4000"></a></p> 
