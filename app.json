@@ -1,17 +1,17 @@
 {
- "name": "TeleBot - UserBot",
- "description": "An advanced Telethon Userbot, from @TeleBotSupport",
- "logo": "https://telegra.ph/file/0b1d5cb8deeec7a506154.jpg",
+ "name": "MLØBOT - UserBot",
+ "description": "A Superpower Telethon Userbot, from @MLO_USERBOT",
+ "logo": "https://telegra.ph/file/a6874b4cde264dd378187.jpg",
  "keywords": [
   "telegram",
   "userbot",
-  "TeleBot",
+  "MLOBot",
   "modular",
   "productivity"
  ],
- "repository": "https://github.com/xditya/TeleBot/",
- "website": "https://xditya.gitbook.io/telebot/",
- "success_url": "https://t.me/TeleBotHelp/13",
+ "repository": "https://github.com/prashu32/MLOBOT/",
+ "website": "https://prashu32.gitbook.io/MLOBOT/",
+ "success_url": "https://t.me/MLO_USERBOT/13",
  "stack": "container",
  "env": {
   "ENV": {
@@ -20,7 +20,7 @@
   },
   "TEMP_DOWNLOAD_DIRECTORY": {
    "description": "Where downloaded files will go.",
-   "value": "./telebot/DOWNLOADS/",
+   "value": "./Mlobot/DOWNLOADS/",
    "required": false
   },
   "APP_ID": {
@@ -32,12 +32,12 @@
    "value": ""
   },
   "STRING_SESSION": {
-   "description": "Get this value by running python3 telesetup.py locally or https://telebot-sessionstring-generator.xditya.repl.run online.",
+   "description": "Get this value by running python3 telesetup.py locally or https://MLOBOT-sessionstring-generator.prashu32.repl.run online.",
    "value": ""
   },  
   "CUSTOM_PMPERMIT": {
    "description": "The message that appears when someone PM's you. Leave it as such for default message.",
-   "value": "Do not spam here, else you will be blocked automatically."
+   "value": "Don't try to spam here, else you will be blocked automatically."
   },  
   "GITHUB_ACCESS_TOKEN": {
    "description": "Your Github Access Token for gitcommit plugin.Google 'Github access token' to find.",
@@ -55,7 +55,7 @@
    "required": false
   },  
   "GIT_REPO_NAME": {
-   "description": "Your repo name Example: xditya/TeleBot, but GITHUB_ACCESS_TOKEN must be setup first.",
+   "description": "Your repo name Example: prashu32/MLOBOT, but GITHUB_ACCESS_TOKEN must be setup first.",
    "value": "",
    "required": false
   },
@@ -111,7 +111,7 @@
   },  
   "MAX_SPAM": {
    "description": "Number of messages one can send in your PM before being approved. By default, it is 3.",
-   "value": "3",
+   "value": "2",
    "required": false
   },
   "OCR_SPACE_API_KEY": {
