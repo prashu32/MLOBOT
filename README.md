@@ -1,6 +1,6 @@
 <p align="center"><a href="https://t.me/spamreporterr"><img src="https://telegra.ph/file/6a0749dec068cf9e47b82.jpg" width="5000"></a></p> 
-<h2 align="center"><b>MLO-USERBOT❤️</b></h2>
-<h4 align="center">A Powerful, Smart And Romantic Userbot In Telethon.</h4>
+<h2 align="center"><b>💛MLO-USERBOT❤️</b></h2>
+<h4 align="center">A POWERFUL, SMART AND ROMANTIC USERBOT IN TELETHON.</h4>
 
 
 
@@ -8,7 +8,7 @@
 
 
 
-# Support
+# SUPPORT
 
 <a href="https://t.me/mlo_userbot"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
 
@@ -45,13 +45,13 @@
 
 # Using Heroku
 
-### - Open Your MLO Heroku App
-### - Click On More Option
-### - Now Click On 'Run Console'
-### - Now Run Command 'bash StringGen'
-### - Now Enter Your Api ID / Hash 
-### - Enter Your Phone Number, OTP, If Password then enter it Too.
-### - Now Check Inbox For Your String Session  
+### - OPEN YOUR MLO HEROKU APP
+### - CLICK ON MORE OPTION
+### - NOW CLICK ON 'RUN CONSOLE'
+### - NOW RUN COMMAND 'BASH STRINGGEN'
+### - NOW ENTER YOUR API ID / HASH 
+### - ENTER YOUR PHONE NUMBER, OTP, IF PASSWORD THEN ENTER IT TOO.
+### - NOW CHECK INBOX FOR YOUR STRING SESSION  
 
 
 
@@ -60,7 +60,7 @@
 
 
 
-# Hard Way (For Devs)
+# HARD WAY ‼️ (For Devs)
 
 Simply clone the repository and run the main file:
 ```sh
