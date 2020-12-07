@@ -20,8 +20,8 @@
 
 
 # METHOD
-
-#### A Simple and easy video will be provided soon if people took interest. Else see Infotel's videos or contact [@Mbbs_lover](https://t.me/mbbs_lover) on telegram
+# ❤️🧡💛💚💙💜🤎🤍🖤
+#### 🙋🦋 A SIMPLE AND EASY VIDEO🎥 WILL BE PROVIDED SOON🎧 IF PEOPLE TOOK INTEREST. ELSE SEE INFOTEL'S VIDEOS OR CONTACT [@Mbbs_lover](https://t.me/MBBS_LOVER)🎶🎶 ON TELEGRAM
 
 
 
