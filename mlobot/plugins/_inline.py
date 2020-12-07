@@ -1,5 +1,5 @@
 #    MloBot - UserBot
-#    Copyright (C) 2020 TeleBot
+#    Copyright (C) 2020 MloBot
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -48,7 +48,7 @@ MESAG = (
     else "`MløBøt PM security ultra Prøtōcol! Please wait for my sweet master to approve you. 😊"
 )
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot User"
-USER_BOT_WARN_ZERO = "`KITNI BAAR BOLE PADHAI LIKHAI KRO IAS WIAS BNO DON'T TRY TO SPAM😈. NOW GO TO MY BLOCKLIST ALREADY MANY NIGGA THERE GET LOST 🤧 .`\n\n**GoodBye!** "
+USER_BOT_WARN_ZERO = "`KITNI BAAR BOLE PADHAI LIKHAI KRO IAS WIAS BNO DON'T TRY TO SPAM😈 MY SWEET MASTER PM. NOW GO TO MY BLOCKLIST ALREADY MANY NIGGA THERE GET LOST 🤧 .`\n\n**GoodBye!** "
 
 if Var.LOAD_MYBOT == "True":
     USER_BOT_NO_WARN = (
@@ -68,8 +68,8 @@ elif Var.LOAD_MYBOT == "False":
         )
     )
 
-CUSTOM_HELP_EMOJI = os.environ.get("CUSTOM_HELP_EMOJI", "⚡")
-HELP_ROWS = int(os.environ.get("HELP_ROWS", 5))
+CUSTOM_HELP_EMOJI = os.environ.get("CUSTOM_HELP_EMOJI", "🔱")
+HELP_ROWS = int(os.environ.get("HELP_ROWS", 6))
 HELP_COLOUMNS = int(os.environ.get("HELP_COLOUMNS", 3))
 
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
@@ -83,7 +83,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
-                "© TeleBot Help",
+                "© MlobōT Help",
                 text="{}\nCurrently Loaded Plugins: {}".format(query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=False,
@@ -91,56 +91,56 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         elif event.query.user_id == bot.uid and query == "stats":
             result = builder.article(
                 title="Stats",
-                text=f"**TeleBot Stats For [{DEFAULTUSER}](tg://user?id={myid})**\n\n__Bot is functioning normally, master!__\n\n(c) @TeleBotSupport",
+                text=f"**MloBot Stats For [{DEFAULTUSER}](tg://user?id={myid})**\n\n__ALL systems are functioning normally, SIR!__\n\n(c) @MLO_USERBOT",
                 buttons=[
                     [custom.Button.inline("Stats", data="statcheck")],
-                    [Button.url("Repo", "https://github.com/xditya/TeleBot")],
+                    [Button.url("Repo", "https://github.com/prashu32/MLOBOT")],
                     [
                         Button.url(
-                            "Deploy Now!",
-                            "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fxditya%2FTeleBot&template=https%3A%2F%2Fgithub.com%2Fxditya%2FTeleBot",
+                            "DEPLOY NOW!",
+                            "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fprashu32%2FMLOBOT&template=https%3A%2F%2Fgithub.com%2Fprashu32%2FMLOBOT",
                         )
                     ],
                 ],
             )
         elif event.query.user_id == bot.uid and query.startswith("**PM"):
-            TELEBT = USER_BOT_NO_WARN.format(DEFAULTUSER, myid, MESAG)
+            MLOBOT = USER_BOT_NO_WARN.format(DEFAULTUSER, myid, MESAG)
             result = builder.photo(
                 file=TELEPIC,
                 text=TELEBT,
                 buttons=[
                     [
                         custom.Button.inline("Request ", data="req"),
-                        custom.Button.inline("Chat 💭", data="chat"),
+                        custom.Button.inline("Chat 💭", data="Kya chat padho jake"),
                     ],
-                    [custom.Button.inline("To spam 🚫", data="heheboi")],
+                    [custom.Button.inline("To spam 🚫", data="NIKAL BSDK")],
                     [custom.Button.inline("What is this ❓", data="pmclick")],
                 ],
             )
         elif event.query.user_id == bot.uid and query == "repo":
             result = builder.article(
                 title="Repository",
-                text=f"TeleBot - Telegram Userbot.",
+                text=f"MloBot - Telegram Userbot.",
                 buttons=[
                     [
-                        Button.url("Repo", "https://github.com/xditya/TeleBot"),
+                        Button.url("Repo", "https://github.com/prashu32/MLOBOT"),
                         Button.url(
                             "Deploy",
-                            "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fxditya%2FTeleBot&template=https%3A%2F%2Fgithub.com%2Fxditya%2FTeleBot",
+                            "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fprashu32%2FMLOBOT&template=https%3A%2F%2Fgithub.com%2Fprashu32%2FMLOBOT",
                         ),
                     ],
-                    [Button.url("Support", "https://t.me/TeleBotSupport")],
+                    [Button.url("Support", "https://t.me/SPAMREPORTERR")],
                 ],
             )
         else:
             result = builder.article(
                 "Source Code",
-                text="**Welcome to TeleBot**\n\n`Click below buttons for more`",
+                text="**WELCOME TO MLOBOT**\n\n`Click below buttons for more`",
                 buttons=[
-                    [custom.Button.url("Creator👨‍🦱", "https://t.me/its_xditya")],
+                    [custom.Button.url("Creator👨‍🦱", "https://t.me/Mbbs_lover")],
                     [
                         custom.Button.url(
-                            "👨‍💻Source Code‍💻", "https://github.com/xditya/TeleBot"
+                            "👨‍💻Source Code‍💻", "https://github.com/prashu32/MLOBOT"
                         ),
                         custom.Button.url(
                             "Deploy 🌀",
@@ -149,7 +149,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     ],
                     [
                         custom.Button.url(
-                            "Updates and Support Group↗️", "https://t.me/TeleBotSupport"
+                            "Updates and Support Group↗️", "https://t.me/spamreporterr"
                         )
                     ],
                 ],
@@ -181,7 +181,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
             await event.edit(
-                f"This is the PM Security for {DEFAULTUSER} to keep away spammers and retards.\n\nProtected by [TeleBot](t.me/TeleBotSupport)"
+                f"THIS IS THE PM SECURITY FOR {DEFAULTUSER} TO KEEP AWAY SPAMMERS AND RETARDS.\n\nProtected by [MLOBOT](t.me/mlo_userbot)"
             )
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"reopen")))
@@ -218,7 +218,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
             await event.edit(
-                f"Oho, you want to chat...\nPlease wait and see if {DEFAULTUSER} is in a mood to chat, if yes, he will be replying soon!\nTill then, **do not spam.**"
+                f"Oho, YOU WANT TO CHAT...\nOK PLEASE WAIT AND SEE IF {DEFAULTUSER} IS IN A MOOD TO CHAT, IF YES, HE WILL BE REPLYING SOON!\nTill then, **DO NOT SPAM 😈.**"
             )
             target = await event.client(GetFullUserRequest(event.query.user_id))
             ok = event.query.user_id
@@ -245,14 +245,14 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             tosend = f"Hey {DEFAULTUSER}, [{first_name}](tg://user?id={ok}) wants to PM you for **help**!"
             await tgbot.send_message(LOG_GP, tosend)
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"heheboi")))
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"NIKAL BSDK")))
     async def on_pm_click(event):
         if event.query.user_id == bot.uid:
             reply_pop_up_alert = "This ain't for you, master!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
             await event.edit(
-                f"Oh, so you are here to spam 😤\nGoodbye.\nYour message has been read and successfully ignored."
+                "Oh, SO YOU ARE HERE TO SPAM 😈😤\nGoodbye.\nIF YOU ARE BAD MY MASTER IS YOUR DAD PEHLE HI FURSAT ME NIKALTA."
             )
             await borg(functions.contacts.BlockRequest(event.query.user_id))
             target = await event.client(GetFullUserRequest(event.query.user_id))
@@ -273,7 +273,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 "Menu Closed!!", buttons=[Button.inline("Re-open Menu", data="reopen")]
             )
         else:
-            reply_pop_up_alert = "Please get your own userbot from @TeleBotSupport "
+            reply_pop_up_alert = "APNA USERBOT BNA LO SIR DON'T USE MINE"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"statcheck")))
@@ -295,7 +295,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
+            reply_pop_up_alert = "APNA USERBOT BNA LO SIR DON'T USE MINE!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(
@@ -320,13 +320,13 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             except BaseException:
                 pass
             if help_string == "":
-                reply_pop_up_alert = "{} has no detailed info.\nUse .help {}".format(
+                reply_pop_up_alert = "{} HAS NO DETAILED info.\nUse .help {}".format(
                     plugin_name, plugin_name
                 )
             else:
                 reply_pop_up_alert = help_string
             reply_pop_up_alert += "\n Use .unload {} to remove this plugin\n\
-                © Telebot".format(
+                © MLOBOT".format(
                 plugin_name
             )
             if len(help_string) >= 140:
@@ -340,7 +340,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             else:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
-            reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
+            reply_pop_up_alert = "APNA USERBOT BNA LO SIR DON'T USE MINE!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
@@ -370,11 +370,11 @@ def paginate_help(page_number, loaded_plugins, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "⫷ Previous", data="{}_prev({})".format(prefix, modulo_page)
+                    "⫷ 🔱PREVIOUS", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline("║ Close ║", data="close"),
                 custom.Button.inline(
-                    "Next ⫸", data="{}_next({})".format(prefix, modulo_page)
+                    "NEXT 🔱 ⫸", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
