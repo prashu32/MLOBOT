@@ -1,4 +1,4 @@
-#   MloBot - UserBot
+#    MloBot - UserBot
 #    Copyright (C) 2020 TeleBot
 
 #    This program is free software: you can redistribute it and/or modify
@@ -45,10 +45,10 @@ LOG_GP = Var.PRIVATE_GROUP_ID
 MESAG = (
     str(CUSTOM_PMPERMIT)
     if CUSTOM_PMPERMIT
-    else "`TeleBot PM security! Please wait for me to approve you. 😊"
+    else "`MløBøt PM security ultra Prøtōcol! Please wait for my sweet master to approve you. 😊"
 )
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot User"
-USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
+USER_BOT_WARN_ZERO = "`KITNI BAAR BOLE PADHAI LIKHAI KRO IAS WIAS BNO DON'T TRY TO SPAM😈. NOW GO TO MY BLOCKLIST ALREADY MANY NIGGA THERE GET LOST 🤧 .`\n\n**GoodBye!** "
 
 if Var.LOAD_MYBOT == "True":
     USER_BOT_NO_WARN = (
