@@ -6,12 +6,12 @@
     "telegram",
     "fridaybot",
     "plugin",
-    "telegram-fridaybot",
+    "telegram-mlouserbot",
     "productivity"
   ],
-  "repository": "https://github.com/starkgang/FridayUserbot",
+  "repository": "https://github.com/prashu32/Mlo-userbot",
   "website": "starkgang.ml",
-  "success_url": "t.me/FridayOT",
+  "success_url": "t.me/mbbs_lover",
   "stack": "container",
   "env": {
     "ENV": {
