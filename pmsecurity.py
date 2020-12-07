@@ -1,5 +1,5 @@
-#    TeleBot - UserBot
-#    Copyright (C) 2020 TeleBot
+#    MLOBOT - UserBot
+#    Copyright (C) 2020 MLOBOT
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -29,7 +29,7 @@ PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
-    else "https://telegra.ph/file/92cfbab6598148837c2e4.jpg"
+    else "https://telegra.ph/file/83353239732f4b6221885.jpg"
 )
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
@@ -37,20 +37,21 @@ myid = bot.uid
 MESAG = (
     str(CUSTOM_PMPERMIT)
     if CUSTOM_PMPERMIT
-    else "`TeleBot PM security! Please wait for me to approve you. 😊"
+    else "`MløBøt PM security ultra Prøtōcol! Please wait for my sweet master to approve you. 😊"
+)  
 )
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot User"
-USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "MLOBOT User"
+USER_BOT_WARN_ZERO = "`KITNI BAAR BOLE PADHAI LIKHAI KRO IAS WIAS BNO DON'T TRY TO SPAM😈 MY SWEET MASTER PM. NOW GO TO MY BLOCKLIST ALREADY MANY NIGGA THERE GET LOST 🤧.`\n\n**GoodBye!** "
 USER_BOT_NO_WARN = (
-    "**PM Security ~ TeleBot**\n\nNice to see you here, but  "
+    "**PM Security ~ MloBot**\n\nNice to see you here, but  "
     "[{}](tg://user?id={}) is currently unavailable.\nThis is an automated message.\n\n"
     "{}\n\n**You have** `{}/{}` **warnings...**"
     "\n\n   ~ Thank You."
 )
 
 
-@telebot.on(admin_cmd(pattern="a ?(.*)"))
-@telebot.on(admin_cmd(pattern="approve ?(.*)"))
+@mlobot.on(admin_cmd(pattern="a ?(.*)"))
+@mlobot.on(admin_cmd(pattern="approve ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -94,7 +95,7 @@ async def you_dm_niqq(event):
                     pass
 
 
-@telebot.on(admin_cmd(pattern="block ?(.*)"))
+@Mlobot.on(admin_cmd(pattern="block ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -103,9 +104,9 @@ async def approve_p_m(event):
     event.pattern_match.group(1)
     chat = await event.get_chat()
     if event.is_private:
-        if chat.id == 719195224:
-            await event.edit("You tried to block my master. GoodBye for 100 seconds! 💤")
-            await asyncio.sleep(100)
+        if chat.id == 1137511834:
+            await event.edit("YOU TRIED TO BLOCK MY JAANU. GoodBye for 200 seconds! 💤")
+            await asyncio.sleep(200)
         else:
             if pmpermit_sql.is_approved(chat.id):
                 pmpermit_sql.disapprove(chat.id)
@@ -118,8 +119,8 @@ async def approve_p_m(event):
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
 
-@telebot.on(admin_cmd(pattern="da ?(.*)"))
-@telebot.on(admin_cmd(pattern="disapprove ?(.*)"))
+@mlobot.on(admin_cmd(pattern="da ?(.*)"))
+@mlobot.on(admin_cmd(pattern="disapprove ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -128,8 +129,8 @@ async def approve_p_m(event):
     event.pattern_match.group(1)
     chat = await event.get_chat()
     if event.is_private:
-        if chat.id == 719195224:
-            await event.edit("Sorry, I Can't Disapprove My Master")
+        if chat.id == 1137511834:
+            await event.edit("SORRY, I Can't Disapprove MY JAANU")
         else:
             if pmpermit_sql.is_approved(chat.id):
                 pmpermit_sql.disapprove(chat.id)
@@ -140,12 +141,12 @@ async def approve_p_m(event):
                 )
 
 
-@telebot.on(admin_cmd(pattern="listapproved"))
+@Mlobot.on(admin_cmd(pattern="listapproved"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
     approved_users = pmpermit_sql.get_all_approved()
-    APPROVED_PMs = "[TeleBot] Currently Approved PMs\n"
+    APPROVED_PMs = "[MloBot] Currently Approved PMs\n"
     if len(approved_users) > 0:
         for a_user in approved_users:
             if a_user.reason:
@@ -271,7 +272,7 @@ async def hehehe(event):
     chat = await event.get_chat()
     if event.is_private:
         if not pmpermit_sql.is_approved(chat.id):
-            pmpermit_sql.approve(chat.id, "**Dev is here**")
+            pmpermit_sql.approve(chat.id, "**Professor is here**")
             await borg.send_message(chat, "**Here comes my Master! Lucky you!!**")
 
 
@@ -279,7 +280,7 @@ async def hehehe(event):
 NEEDIT = os.environ.get("INSTANT_BLOCK", None)
 if NEEDIT == "on":
 
-    @telebot.on(events.NewMessage(incoming=True))
+    @mlobot.on(events.NewMessage(incoming=True))
     async def on_new_private_message(event):
         event.message.message
         event.message.media
@@ -303,7 +304,7 @@ CMD_HELP.update(
         \n\n.disapprove/.da\nUse - DisApprove PM\
         \n\n.listapproved\nUse - Get all approved PMs.\
         \n\nSet var PMPERMIT_PIC for custom PMPic, CUSTOM_PMPERMIT for custom text, PMSECURITY <on/off> to enable/disable, INSTANT_BLOCK <on/off>.\
-        \nGet help from @TeleBotHelpBot."
+        \nGet help from @Mlo_userbot."
     }
 )
-# (c) TeleBot
+# (c) MloBot
