@@ -4,14 +4,13 @@
   "logo": "https://telegra.ph/file/a6874b4cde264dd378187.jpg",
   "keywords": [
     "telegram",
-    "fridaybot",
+    "Mlobot",
     "plugin",
     "telegram-mlouserbot",
     "productivity"
   ],
-  "repository": "https://github.com/prashu32/Mlo-userbot",
-  "website": "starkgang.ml",
-  "success_url": "t.me/mbbs_lover",
+  "repository": "https://github.com/prashu32/MLOBOT",
+  "success_url": "t.me/MLO_USERBOT",
   "stack": "container",
   "env": {
     "ENV": {
@@ -20,7 +19,7 @@
     },
     "TEMP_DOWNLOAD_DIRECTORY": {
       "description": "Where downloaded files will go.",
-      "value": "./fridaybot/DOWNLOADS/",
+      "value": "./mlobot/DOWNLOADS/",
       "required": false
     },
     "ALIVE_NAME": {
