@@ -7,7 +7,7 @@ import os
 import sys
 from telethon.sessions import StringSession
 from telethon import TelegramClient
-from telebot.telebotConfig import Var
+from mlobot.mlobotConfig import Var
 import time
 
 if Var.STRING_SESSION:
@@ -106,7 +106,7 @@ if bool(ENV):
     YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 
     # Default .alive name
-    ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
+    ALIVE_NAME = os.environ.get("ALIVE_NAME", MLŌBØT)
 
     # for autopic
     AUTOPIC_TEXT = os.environ.get(
