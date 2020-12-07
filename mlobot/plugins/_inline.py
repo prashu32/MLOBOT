@@ -1,4 +1,4 @@
-#    TeleBot - UserBot
+#   MloBot - UserBot
 #    Copyright (C) 2020 TeleBot
 
 #    This program is free software: you can redistribute it and/or modify
@@ -23,15 +23,15 @@ from math import ceil
 from telethon import Button, custom, events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
-from telebot import ALIVE_NAME, CMD_HELP, CMD_LIST, CUSTOM_PMPERMIT, bot
-from telebot.plugins import telestats
-from telebot.telebotConfig import Var
+from mlobot import ALIVE_NAME, CMD_HELP, CMD_LIST, CUSTOM_PMPERMIT, bot
+from mlobot.plugins import telestats
+from mlobot.mlobotConfig import Var
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
-    else "https://telegra.ph/file/92cfbab6598148837c2e4.jpg"
+    else "https://telegra.ph/file/83353239732f4b6221885.jpg"
 )
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
