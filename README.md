@@ -1,111 +1,85 @@
-<p align="center"><a href="https://t.me/spamreporterr"><img src="https://telegra.ph/file/6a0749dec068cf9e47b82.jpg" width="5000"></a></p> 
-<h2 align="center"><b>💛MLO㋛︎USERBOT❤️</b></h2>
-<h4 align="center">A POWERFUL, SMART AND ROMANTIC USERBOT IN TELETHON.</h4>
+# TeleBot - Telegram UserBot
 
+# <p align="left"><a href="https://github.com/xditya/TeleBot"><img src="https://github-readme-stats.vercel.app/api/pin?username=xditya&show_icons=true&theme=dark&hide_border=true&repo=TeleBot"></a></p><p align="centre"><a href="https://t.me/TeleBotHelpChat"> <img src="https://img.shields.io/badge/telegram-Support_Group-blue?style=social&logo=telegram" alt="Support" /></a><a href="https://github.com/xditya/TeleBot/stargazers"><img src="https://img.shields.io/github/stars/xditya/TeleBot?style=social"></a><a href="https://github.com/xditya/TeleBot/fork"><img src="https://img.shields.io/github/forks/xditya/TeleBot?label=Fork&logoColor=blue&style=social"></a>	<a href="https://github.com/xditya/TeleBot"><img src="https://img.shields.io/github/last-commit/xditya/TeleBot?style=flat-square"></a></p>
+    
+## Video Tutorial on deploying
 
+Click the below button to watch the video tutorial on deploying
 
+<a href="https://youtu.be/aPU334icQSM"><img src="https://img.shields.io/badge/How%20To%20Deploy-LATEST-blue.svg?logo=Youtube"></a>
+<a href="https://youtu.be/aPU334icQSM"><img src="https://img.shields.io/youtube/views/aPU334icQSM?style=social">
+    
+<a href="https://youtu.be/XmvdDHiIDb4"><img src="https://img.shields.io/badge/How%20To%20Deploy-OLD-blue.svg?logo=Youtube"></a>
+<a href="https://youtu.be/XmvdDHiIDb4"><img src="https://img.shields.io/youtube/views/XmvdDHiIDb4?style=social"></a>
+    
+    
+## Documentation
+For passionate readers 😂 the documentation can be found [here](https://xditya.gitbook.io/telebot/)
 
+## The Easier Way to install
 
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/xditya/TeleBot)
 
+## Support
+Join [TeleBot Support group](https://t.me/TeleBotSupport) for updates and new plugin suggestions.
+Do fork and star the repo 
 
-# SUPPORT
+### Session String 
+<a href="https://telebot-sessionstring-generator.xditya.repl.run/" target="_blank"><img src="https://img.shields.io/badge/run-string__session.py-red?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
 
-<a href="https://t.me/mlo_userbot"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
-
-<a href="https://t.me/spamreporterr"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram"></a>
-
-
-
-
-
-
-# METHOD
-# ❤️🧡💛💚💙💜🤎🤍🖤
-#### 🙋🦋 A SIMPLE AND EASY VIDEO🎥 WILL BE PROVIDED SOON🎧 IF PEOPLE TOOK INTEREST. ELSE SEE INFOTEL'S VIDEOS OR CONTACT [@Mbbs_lover](https://t.me/MBBS_LOVER)🎶🎶 ON TELEGRAM
-
-
-
-
-
-# DEPLOYING TO HEROKU
-
-[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/prashu32/MLOBOT)
-
-
-
-
-
-
-
-
-# String Session
-### Repl
-
-[![Run on Repl.it](https://repl.it/badge/github/mbbslove/mlo)](https://repl.it/@Mbbslove/mlo)
-
-# Using Heroku
-
-### - OPEN YOUR MLO HEROKU APP
-### - CLICK ON MORE OPTION
-### - NOW CLICK ON 'RUN CONSOLE'
-### - NOW RUN COMMAND 'BASH STRINGGEN'
-### - NOW ENTER YOUR API ID / HASH 
-### - ENTER YOUR PHONE NUMBER, OTP, IF PASSWORD THEN ENTER IT TOO.
-### - NOW CHECK INBOX FOR YOUR STRING SESSION  
-
-
-
-
-
-
-
-
-# HARD WAY ‼️ (For Devs)
+### The Normal Way
 
 Simply clone the repository and run the main file:
 ```sh
-# Install Git First.
-git clone https://github.com/MysteryxD/Mystery
-# Open Git Cloned File
-cd mystery
-# Config Virtual Env
+git clone https://github.com/xditya/TeleBot
+cd TeleBot
 virtualenv -p /usr/bin/python3 venv
 . ./venv/bin/activate
-# Install All Requirements 
 pip install -r requirements.txt
-# Create local_config.py with variables as given below
-# Start Bot 
-python3 -m MLOBŌT
+# <Create local_config.py with variables as given below>
+python3 -m telebot
 ```
 
+An example `local_config.py` file could be:
 
+**Not All of the variables are mandatory**
 
+__The Userbot should work by setting only the first two variables__
 
+```python3
+from heroku_config import Var
 
-
-
-
-## MANDATORY VARS
-```
-[+] Only two of the environment variables are mandatory.
-
-[+] This is because of telethon.errors.rpc_error_list.ApiIdPublishedFloodError
-
-    [-] APP_ID:   You can get this value from https://my.telegram.org
-    [-] API_HASH :   You can get this value from https://my.telegram.org
-    
-[+] The MLO USERBOT will not work without setting the mandatory vars.
+class Development(Var):
+  APP_ID = 6
+  API_HASH = "eb06d4abfb49dc3eeb1aeb98ae0f581e"
 ```
 
+**Heroku Configuration**
+Simply just leave the Config as it is.
 
-# LICENSE
-[![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
+**Local Configuration**
+Check [Line 111](https://github.com/Total-Noob-69/X-tra-Telegram/blob/master/userbot/uniborgConfig.py#L111) and start adding your vars there.
+Fortunately there are no Mandatory vars for the UniBorg Support Config.
 
-MLO Userbot is Free Software: You can use, study share and improve it at your
-will. Specifically you can redistribute and/or modify it under the terms of the
-[GNU General Public License](https://www.gnu.org/licenses/gpl.html) as
-published by the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version. 
+## Mandatory Vars
 
-# SPECIAL THANKS TO
-<p align="center"><a href="https://t.me/mbbs_lover"><img src="https://telegra.ph/file/a6874b4cde264dd378187.jpg" width="4000"></a></p> 
+- Only two of the environment variables are mandatory.
+- This is because of `telethon.errors.rpc_error_list.ApiIdPublishedFloodError`
+    - `APP_ID`:   You can get this value from https://my.telegram.org
+    - `API_HASH`:   You can get this value from https://my.telegram.org
+- The userbot will not work without setting the mandatory vars.
+
+# Disclaimer
+```
+/**
+    	Improper use may lead to ban.
+    	I am not responsible if you misuse this bot.
+	This bot is just for managing groups more effectively and having some fun
+	with your telegram account.
+	No one is responsible for your actions.
+	If you spammed and got reported again and again, 
+	and, at last got your account banned, and you
+	point your fingers at me, I'll be rolling on the floor laughing at you.
+/**
+```
+
