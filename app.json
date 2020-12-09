@@ -1,17 +1,17 @@
 {
- "name": "TeleBot - UserBot",
- "description": "An advanced Telethon Userbot, from @TeleBotSupport",
- "logo": "https://telegra.ph/file/0b1d5cb8deeec7a506154.jpg",
+ "name": "MloBot - UserBot",
+ "description": "An Best, Superb Telethon Userbot, from @Mlo_userbot",
+ "logo": "https://telegra.ph/file/a6874b4cde264dd378187.jpg",
  "keywords": [
   "telegram",
   "userbot",
-  "TeleBot",
+  "Mlobot",
   "modular",
   "productivity"
  ],
- "repository": "https://github.com/xditya/TeleBot/",
- "website": "https://xditya.gitbook.io/telebot/",
- "success_url": "https://t.me/TeleBotHelp/13",
+ "repository": "https://github.com/prashu32/MloBot/",
+ "website": "https://prashu32.gitbook.io/Mlobot/",
+ "success_url": "https://t.me/Mlo_userbot",
  "stack": "container",
  "env": {
   "ENV": {
@@ -20,7 +20,7 @@
   },
   "TEMP_DOWNLOAD_DIRECTORY": {
    "description": "Where downloaded files will go.",
-   "value": "./telebot/DOWNLOADS/",
+   "value": "./mlobot/DOWNLOADS/",
    "required": false
   },
   "APP_ID": {
@@ -37,7 +37,7 @@
   },  
   "CUSTOM_PMPERMIT": {
    "description": "The message that appears when someone PM's you. Leave it as such for default message.",
-   "value": "Do not spam here, else you will be blocked automatically."
+   "value": "Don't try to spam here, else you will be blocked automatically."
   },  
   "GITHUB_ACCESS_TOKEN": {
    "description": "Your Github Access Token for gitcommit plugin.Google 'Github access token' to find.",
