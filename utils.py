@@ -3,7 +3,7 @@ import math
 from mlobot import bot
 from telethon import events
 from pathlib import Path
-from mlobot.telebotConfig import Var, Config
+from mlobot.mlobotConfig import Var, Config
 from mlobot import LOAD_PLUG
 from mlobot import CMD_LIST
 import re
@@ -90,10 +90,10 @@ def load_module(shortname):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        import telebot.utils
+        import mlobot.utils
         import importlib
-        path = Path(f"telebot/plugins/{shortname}.py")
-        name = "telebot.plugins.{}".format(shortname)
+        path = Path(f"mlobot/plugins/{shortname}.py")
+        name = "mlobot.plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
