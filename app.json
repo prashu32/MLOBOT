@@ -32,7 +32,7 @@
    "value": ""
   },
   "STRING_SESSION": {
-   "description": "Get this value by running python3 telesetup.py locally or https://telebot-sessionstring-generator.xditya.repl.run online.",
+   "description": "Get this value by running python3 telesetup.py locally or https://mlobot-sessionstring-generator.prashu32.repl.run online.",
    "value": ""
   },  
   "CUSTOM_PMPERMIT": {
@@ -85,7 +85,7 @@
    "required": false
   },
   "PRIVATE_GROUP_ID": {
-   "description": "Same value as PRIVATE_GROUP_BOT_API_ID. Must read https://telegra.ph/TeleBot-Setup-06-06 for knowing how to get the value. Required for pmpermit.",
+   "description": "Same value as PRIVATE_GROUP_BOT_API_ID Required for pmpermit.",
    "value": "",
    "required": true
   },
