@@ -1,5 +1,5 @@
-#    TeleBot - UserBot
-#    Copyright (C) 2020 TeleBot
+#    Mlobot - UserBot
+#    Copyright (C) 2020 Mlobot
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -14,10 +14,10 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from telebot.plugins import OWNER_ID, TELE_NAME
+from mlobot.plugins import OWNER_ID, TELE_NAME
 import time
 from datetime import datetime
-from telebot.telebotConfig import Var
+from mlobot.mlobotConfig import Var
 
 # start-other disabled
 startotherdis = """
