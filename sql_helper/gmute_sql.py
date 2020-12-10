@@ -1,6 +1,6 @@
 # code of raphielgang and paperplane
 try:
-    from telebot.plugins.sql_helper import SESSION, BASE
+    from mlobot.plugins.sql_helper import SESSION, BASE
 except ImportError:
     raise Exception("Hello!")
 
