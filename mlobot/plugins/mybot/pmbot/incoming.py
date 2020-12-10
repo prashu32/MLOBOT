@@ -1,5 +1,5 @@
-#    TeleBot - UserBot
-#    Copyright (C) 2020 TeleBot
+#    Mlobot - UserBot
+#    Copyright (C) 2020 Mlobot
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -15,10 +15,10 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 # Incoming message checker.
-from telebot.plugins.mybot.sql.users_sql import add_user_to_db
-from telebot.plugins.mybot.sql.blacklist_sql import check_is_black_list
+from mlobot.plugins.mybot.sql.users_sql import add_user_to_db
+from mlobot.plugins.mybot.sql.blacklist_sql import check_is_black_list
 from telethon import events
-from telebot.plugins import OWNER_ID
+from mlobot.plugins import OWNER_ID
 
 # if incoming
 
