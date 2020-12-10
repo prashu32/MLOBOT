@@ -1,4 +1,3 @@
-# (c) @its_xditya
 from sqlalchemy import Column, String
 from . import BASE, SESSION
 
