@@ -54,7 +54,7 @@ if Var.PMSECURITY.lower() == "off":
 else:
     pm = "Enabled"
 
-TELEUSER = str(ALIVE_NAME) if ALIVE_NAME else "@TeleBotSupport"
+TELEUSER = str(ALIVE_NAME) if ALIVE_NAME else "@Mlo_userbot"
 
 tele = f"MloBot Version: {telever}\n"
 tele += f"Log Group: {log}\n"
