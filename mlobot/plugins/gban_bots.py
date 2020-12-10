@@ -1,4 +1,4 @@
-# For TeleBot.
+# For Mlobot.
 # Add G_BAN_LOGGER_GROUP as config var for it to work.
 
 """Globally Ban users from all the
@@ -7,12 +7,12 @@ Available Commands:
 .gban REASON
 .ungban"""
 
-from telebot import CMD_HELP
-from telebot.utils import admin_cmd
+from mlobot import CMD_HELP
+from mlobot.utils import admin_cmd
 
 
-@telebot.on(admin_cmd(pattern="botgban ?(.*)"))
-@telebot.on(sudo_cmd(pattern="botgban ?(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="botgban ?(.*)"))
+@mlobot.on(sudo_cmd(pattern="botgban ?(.*)", allow_sudo=True))
 async def _(event):
     if Config.G_BAN_LOGGER_GROUP is None:
         await eor(
@@ -36,8 +36,8 @@ async def _(event):
     await event.delete()
 
 
-@telebot.on(admin_cmd(pattern="botungban ?(.*)"))
-@telebot.on(sudo_cmd(pattern="botungban ?(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="botungban ?(.*)"))
+@mlobot.on(sudo_cmd(pattern="botungban ?(.*)", allow_sudo=True))
 async def _(event):
     if Config.G_BAN_LOGGER_GROUP is None:
         await eor(
