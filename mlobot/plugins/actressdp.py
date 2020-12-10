@@ -1,6 +1,6 @@
-# Ported from other Telegram UserBots for TeleBot//Made for TeleBot
+# Ported from other Telegram UserBots for MloBot//Made for Mlobot
 # Kangers, don't remove this line
-# @its_xditya
+# @mbbs_lover
 
 # Usage .actressdp Im Not Responsible For Any Ban caused By This
 
@@ -13,7 +13,7 @@ import urllib
 import requests
 from telethon.tl import functions
 
-from telebot import CMD_HELP
+from mlobot import CMD_HELP
 
 COLLECTION_STRING = [
     "indian-actress-wallpapers",
