@@ -1,12 +1,11 @@
-# special thanks to Sur_vivor
-# Re-written for TeleBot by @its_xditya
+# Re-written for Mlobot
 
 import time
 from datetime import datetime
 
-from telebot import CMD_HELP
-from telebot.__init__ import StartTime
-from telebot.plugins import OWNER_ID, TELE_NAME
+from mlobot import CMD_HELP
+from mlobot.__init__ import StartTime
+from mlobot.plugins import OWNER_ID, TELE_NAME
 
 
 def get_readable_time(seconds: int) -> str:
@@ -40,8 +39,8 @@ def get_readable_time(seconds: int) -> str:
 # @command(pattern="^.ping$")
 
 
-@telebot.on(admin_cmd(pattern="ping$"))
-@telebot.on(sudo_cmd(pattern="ping$", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="ping$"))
+@mlobot.on(sudo_cmd(pattern="ping$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -51,7 +50,7 @@ async def _(event):
     ms = (end - start).microseconds / 1000
     uptime = get_readable_time((time.time() - StartTime))
     await x.edit(
-        f"⪼ **Ping speed** : `{ms}`\n⪼ **Uptime** : `{uptime}`\n⪼ **Owner** : [{TELE_NAME}](tg://user?id={OWNER_ID})"
+        f"⪼ **Ping Pong** : `{ms}`\n⪼ **Uptime** : `{uptime}`\n⪼ **MY KING** : [{TELE_NAME}](tg://user?id={OWNER_ID})"
     )
 
 
