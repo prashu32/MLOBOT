@@ -1,5 +1,5 @@
-#    TeleBot - UserBot
-#    Copyright (C) 2020 TeleBot
+#    MloBot - UserBot
+#    Copyright (C) 2020 MloBot
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -15,19 +15,19 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import re
-from telebot.plugins.mybot import *
+from mlobot.plugins.mybot import *
 from telethon import events, Button
 import heroku3
 import asyncio
 import os
 import requests
-from telebot.plugins.mybot.sql.blacklist_sql import all_bl_users
-from telebot.plugins.mybot.sql.users_sql import all_users
-from telebot.plugins import TELE_NAME
+from mlobot.plugins.mybot.sql.blacklist_sql import all_bl_users
+from mlobot.plugins.mybot.sql.users_sql import all_users
+from mlobot.plugins import TELE_NAME
 from telebot.plugins.mybot.sql.userbase_sql import add_to_userbase, present_in_userbase, full_userbase
 from datetime import datetime
 from telethon import events
-from telebot.telebotConfig import Var
+from mlobot.mlobotConfig import Var
 
 ##################--CONSTANTS--##################
 LOAD_MYBOT = Var.LOAD_MYBOT
@@ -63,9 +63,9 @@ async def start_all(event):
                                  startotherena,
                                  buttons=[
                                      [Button.url(
-                                         "TeleBot", url="https://github.com/xditya/TeleBot")],
+                                         "Mlobot", url="https://github.com/prashu32/Mlobot")],
                                      [Button.inline(
-                                         "Whats this?", data="telebot")]
+                                         "Whats this?", data="mlobot")]
                                  ]
                                  )
 
@@ -235,7 +235,7 @@ async def custom(event):
                 mssg = "`**HEROKU**:" "\nPlease setup your` **HEROKU_APP_NAME**"
                 return
             heroku_var = app.config()
-            heroku_var[telebot] = f"{themssg}"
+            heroku_var[mlobot] = f"{themssg}"
             mssg = "Changed the PMBot start message!!\n**Restarting now**, please give me a minute."
             await event.delete()
             await tgbot.send_message(event.chat_id, mssg)
@@ -254,7 +254,7 @@ async def enablee(event):
             mssg = "`**HEROKU**:" "\nPlease setup your` **HEROKU_APP_NAME**"
             return
         heroku_var = app.config()
-        heroku_var[telebot] = "True"
+        heroku_var[mlobot] = "True"
         mssg = "Successfully turned on PM Bot. Restarting now, please give me a minute."
         await event.delete()
         await tgbot.send_message(event.chat_id, mssg)
@@ -273,7 +273,7 @@ async def dissable(event):
             mssg = "`**HEROKU**:" "\nPlease setup your` **HEROKU_APP_NAME**"
             return
         heroku_var = app.config()
-        heroku_var[telebot] = "False"
+        heroku_var[mlobot] = "False"
         mssg = "Successfully turned off PM Bot. Restarting now, please give me a minute."
         await event.delete()
         await tgbot.send_message(event.chat_id, mssg)
