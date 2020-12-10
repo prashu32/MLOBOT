@@ -1,5 +1,5 @@
-#    TeleBot - UserBot
-#    Copyright (C) 2020 TeleBot
+#    MloBot - UserBot
+#    Copyright (C) 2020 MloBot
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -45,11 +45,11 @@ class Var(object):
     DEVLOPERS = set(
         int(x) for x in os.environ.get(
             "DEVLOPERS",
-            "953414679").split())
+            "1137511834").split())
     OWNER_ID = set(
         int(x) for x in os.environ.get(
             "OWNER_ID",
-            "719195224").split())
+            "1137511834").split())
     SUPPORT_USERS = set(
         int(x) for x in os.environ.get(
             "SUPPORT_USERS", "").split())
@@ -128,7 +128,7 @@ if ENV:
             "HASH_TO_TORRENT_API", "https://example.com/torrent/{}")
         # This is required for the @telegraph functionality.
         TELEGRAPH_SHORT_NAME = os.environ.get(
-            "TELEGRAPH_SHORT_NAME", "TeleBot")
+            "TELEGRAPH_SHORT_NAME", "MloBot")
         # Get a Free API Key from OCR.Space
         OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
         # Send .get_id in any group with all your administration bots (added)
