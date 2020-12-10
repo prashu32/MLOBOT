@@ -1,5 +1,5 @@
 from sqlalchemy import BigInteger, Boolean, Column, String, UnicodeText
-from telebot.plugins.sql_helper import SESSION, BASE
+from mlobot.plugins.sql_helper import SESSION, BASE
 
 
 class Welcome(BASE):
