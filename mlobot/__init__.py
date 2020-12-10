@@ -1,5 +1,5 @@
-#    TeleBot - UserBot
-#    Copyright (C) 2020 TeleBot
+#    MloBot - UserBot
+#    Copyright (C) 2020 MloBot
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -23,10 +23,10 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
-from telebot import ALIVE_NAME, bot, telever
-from telebot.__init__ import StartTime
-from telebot.telebotConfig import Config, Var
-from telebot.utils import admin_cmd, sudo_cmd
+from mlobot import ALIVE_NAME, bot, telever
+from mlobot.__init__ import StartTime
+from mlobot.mlobotConfig import Config, Var
+from mlobot.utils import admin_cmd, sudo_cmd
 
 # stats
 if Var.PRIVATE_GROUP_ID:
@@ -56,13 +56,13 @@ else:
 
 TELEUSER = str(ALIVE_NAME) if ALIVE_NAME else "@TeleBotSupport"
 
-tele = f"TeleBot Version: {telever}\n"
+tele = f"MloBot Version: {telever}\n"
 tele += f"Log Group: {log}\n"
 tele += f"Assistant Bot: {bots}\n"
 tele += f"Lydia: {lyd}\n"
 tele += f"Sudo: {sudo}\n"
 tele += f"PMSecurity: {pm}\n"
-tele += f"\nVisit @TeleBotSupport for assistance.\n"
+tele += f"\nVisit @Mlo_userbot for assistance.\n"
 telestats = f"{tele}"
 
 TELE_NAME = bot.me.first_name
