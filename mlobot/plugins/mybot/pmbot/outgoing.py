@@ -1,9 +1,9 @@
 # by @StarkGang 😋
 
-from telebot.plugins.mybot.sql.users_sql import get_user_id
+from mlobot.plugins.mybot.sql.users_sql import get_user_id
 from telethon import events
 from telethon.utils import pack_bot_file_id
-from telebot.plugins import OWNER_ID
+from mlobot.plugins import OWNER_ID
 
 # outgoing, aka, replying to mssg
 
