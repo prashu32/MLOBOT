@@ -17,7 +17,7 @@
 import os
 
 from mlobot import ALIVE_NAME, CMD_HELP, CMD_HNDLR, CMD_LIST
-from telebot.telebotConfig import Config
+from mlobot.mlobotConfig import Config
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "MloBot User"
 CMD_HNDLR = Config.CMD_HNDLR
