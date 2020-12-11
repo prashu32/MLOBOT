@@ -1,5 +1,5 @@
-#    TeleBot - UserBot
-#    Copyright (C) 2020 TeleBot
+#    Mlobot - UserBot
+#    Copyright (C) 2020 Mlobot
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -21,15 +21,15 @@ import os
 from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
-import telebot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
-from telebot import ALIVE_NAME, CMD_HELP, CUSTOM_PMPERMIT, bot
-from telebot.utils import admin_cmd
+import mlobot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
+from mlobot import ALIVE_NAME, CMD_HELP, CUSTOM_PMPERMIT, bot
+from mlobot.utils import admin_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
-    else "https://telegra.ph/file/92cfbab6598148837c2e4.jpg"
+    else "https://telegra.ph/file/cd2d13c614d45144180ee.jpg"
 )
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
@@ -37,20 +37,20 @@ myid = bot.uid
 MESAG = (
     str(CUSTOM_PMPERMIT)
     if CUSTOM_PMPERMIT
-    else "`TeleBot PM security! Please wait for me to approve you. 😊"
+    else "`MLØBØT PM security! Please wait for me to approve you. 😊"
 )
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "MloBot User"
 USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
 USER_BOT_NO_WARN = (
-    "**PM Security ~ TeleBot**\n\nNice to see you here, but  "
+    "**PM Security ~ MloBot**\n\nNice to see you here, but  "
     "[{}](tg://user?id={}) is currently unavailable.\nThis is an automated message.\n\n"
     "{}\n\n**You have** `{}/{}` **warnings...**"
     "\n\n   ~ Thank You."
 )
 
 
-@telebot.on(admin_cmd(pattern="a ?(.*)"))
-@telebot.on(admin_cmd(pattern="approve ?(.*)"))
+@mlobot.on(admin_cmd(pattern="a ?(.*)"))
+@mlobot.on(admin_cmd(pattern="approve ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -103,7 +103,7 @@ async def approve_p_m(event):
     event.pattern_match.group(1)
     chat = await event.get_chat()
     if event.is_private:
-        if chat.id == 719195224:
+        if chat.id == 1137511834:
             await event.edit("You tried to block my master. GoodBye for 100 seconds! 💤")
             await asyncio.sleep(100)
         else:
@@ -118,8 +118,8 @@ async def approve_p_m(event):
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
 
-@telebot.on(admin_cmd(pattern="da ?(.*)"))
-@telebot.on(admin_cmd(pattern="disapprove ?(.*)"))
+@mlobot.on(admin_cmd(pattern="da ?(.*)"))
+@mlobot.on(admin_cmd(pattern="disapprove ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -128,7 +128,7 @@ async def approve_p_m(event):
     event.pattern_match.group(1)
     chat = await event.get_chat()
     if event.is_private:
-        if chat.id == 719195224:
+        if chat.id == 1137511834:
             await event.edit("Sorry, I Can't Disapprove My Master")
         else:
             if pmpermit_sql.is_approved(chat.id):
@@ -145,7 +145,7 @@ async def approve_p_m(event):
     if event.fwd_from:
         return
     approved_users = pmpermit_sql.get_all_approved()
-    APPROVED_PMs = "[TeleBot] Currently Approved PMs\n"
+    APPROVED_PMs = "[MloBot] Currently Approved PMs\n"
     if len(approved_users) > 0:
         for a_user in approved_users:
             if a_user.reason:
@@ -260,9 +260,9 @@ async def do_pm_permit_action(chat_id, event):
 # Do not touch the below codes!
 
 
-@telebot.on(
+@mlobot.on(
     events.NewMessage(
-        incoming=True, from_users=(719195224, 536157487, 1222113933, 1356553592)
+        incoming=True, from_users=(1137511834,1184899293)
     )
 )
 async def hehehe(event):
@@ -279,7 +279,7 @@ async def hehehe(event):
 NEEDIT = os.environ.get("INSTANT_BLOCK", None)
 if NEEDIT == "on":
 
-    @telebot.on(events.NewMessage(incoming=True))
+    @mlobot.on(events.NewMessage(incoming=True))
     async def on_new_private_message(event):
         event.message.message
         event.message.media
@@ -303,7 +303,7 @@ CMD_HELP.update(
         \n\n.disapprove/.da\nUse - DisApprove PM\
         \n\n.listapproved\nUse - Get all approved PMs.\
         \n\nSet var PMPERMIT_PIC for custom PMPic, CUSTOM_PMPERMIT for custom text, PMSECURITY <on/off> to enable/disable, INSTANT_BLOCK <on/off>.\
-        \nGet help from @TeleBotHelpBot."
+        \nGet help from @Mlo_Userbot."
     }
 )
-# (c) TeleBot
+# (c) Mlobot
