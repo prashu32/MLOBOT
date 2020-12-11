@@ -1,4 +1,4 @@
-# Ported from other Telegram UserBots for TeleBot//Made for TeleBot
+# Ported from other Telegram UserBots for Mlobot//Made for MloBot
 # Kangers, don't remove this line
 # @its_xditya
 
@@ -8,11 +8,11 @@
 
 import asyncio
 
-from telebot import CMD_HELP
+from mlobot import CMD_HELP
 
 
-@telebot.on(admin_cmd(pattern="info"))
-@telebot.on(sudo_cmd(pattern="info", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="info"))
+@mlobot.on(sudo_cmd(pattern="info", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -21,7 +21,7 @@ async def _(event):
     # input_str = event.pattern_match.group(1)
     # if input_str == "Visit this page to know more about TeleBot.":
     await eor(event, "Thanks")
-    animation_chars = ["**TeleBot**", "[More Info](https://telegra.ph/TeleBot-07-08)"]
+    animation_chars = ["**Mlobot**"
 
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
