@@ -4,8 +4,8 @@ from coffeehouse.api import API
 from coffeehouse.lydia import LydiaAI
 from telethon import events
 
-from telebot import CMD_HELP
-from telebot.utils import admin_cmd
+from mlobot import CMD_HELP
+from mlobot.utils import admin_cmd
 
 # Non-SQL Mode
 ACC_LYDIA = {}
@@ -16,8 +16,8 @@ if Var.LYDIA_API_KEY:
     lydia = LydiaAI(api_client)
 
 
-@telebot.on(admin_cmd(pattern="repcf", outgoing=True))
-@telebot.on(sudo_cmd(pattern="repcf", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="repcf", outgoing=True))
+@mlobot.on(sudo_cmd(pattern="repcf", allow_sudo=True))
 async def repcf(event):
     if event.fwd_from:
         return
