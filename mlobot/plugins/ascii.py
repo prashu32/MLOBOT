@@ -1,12 +1,12 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from telebot import CMD_HELP
-from telebot.utils import admin_cmd
+from mlobot import CMD_HELP
+from mlobot.utils import admin_cmd
 
 
-@telebot.on(admin_cmd(pattern="ascii ?(.*)"))
-@telebot.on(sudo_cmd(pattern="ascii ?(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="ascii ?(.*)"))
+@mlobot.on(sudo_cmd(pattern="ascii ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -43,7 +43,7 @@ async def _(event):
             await borg.send_file(event.chat_id, response.message.media)
 
 
-# For TeleBot
+# For Mlobot
 CMD_HELP.update(
     {
         "ascii": "`.ascii` reply to any image file:\
