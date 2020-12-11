@@ -4,10 +4,10 @@ import io
 import sys
 import traceback
 
-from telebot import CMD_HELP
+from mlobot import CMD_HELP
 
 
-@telebot.on(admin_cmd(pattern="eval"))
+@mlobot.on(admin_cmd(pattern="eval"))
 async def _(event):
     if event.fwd_from:
         return
