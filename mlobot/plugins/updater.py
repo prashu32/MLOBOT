@@ -1,12 +1,12 @@
-# For TeleBot
+# For Mlobot
 # Copyright (C) 2019 The Raphielscape Company LLC.
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
-# credits to @AvinashReddy3108
-# Rewritten for TeleBot by @xditya
+# credits to @xditya
+# Rewritten for MloBot by @mbbs_lover
 
 """
-This module is used for updating TeleBot
+This module is used for updating your MloBot
 """
 
 import asyncio
@@ -16,7 +16,7 @@ from os import environ, execle, path, remove
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from telebot import CMD_HNDLR
+from mlobot import CMD_HNDLR
 
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), "requirements.txt"
@@ -24,8 +24,8 @@ requirements_path = path.join(
 
 HEROKU_API_KEY = Var.HEROKU_API_KEY
 HEROKU_APP_NAME = Var.HEROKU_APP_NAME
-GIT_REPO_NAME = "TeleBot"
-UPSTREAM_REPO_URL = "https://github.com/xditya/TeleBot"
+GIT_REPO_NAME = "Mlobot"
+UPSTREAM_REPO_URL = "https://github.com/prashu32/Mlobot"
 
 xxxx = CMD_HNDLR if CMD_HNDLR else "."
 
@@ -52,7 +52,7 @@ async def updateme_requirements():
         return repr(e)
 
 
-@telebot.on(admin_cmd(pattern="update ?(.*)"))
+@mlobot.on(admin_cmd(pattern="update ?(.*)"))
 async def upstream(ups):
     "For .update command, check if the bot is up to date, update if specified"
     await ups.edit("`Searching for new updates, if any...`")
@@ -94,7 +94,7 @@ async def upstream(ups):
             f"**[UPDATER]:**` Looks like you are using your own custom branch ({ac_br}). "
             "in that case, Updater is unable to identify "
             "which branch is to be merged. "
-            "Please checkout the official branch of TeleBot`"
+            "Please checkout the official branch of Mlobot`"
         )
         repo.__del__()
         return
