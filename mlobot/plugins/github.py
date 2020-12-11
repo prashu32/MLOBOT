@@ -2,7 +2,7 @@
 Syntax: .github USERNAME"""
 import requests
 
-from telebot import CMD_HELP
+from mlobot import CMD_HELP
 
 
 @borg.on(admin_cmd(pattern="github (.*)"))
