@@ -1,4 +1,4 @@
-# For @TeleBotHelp
+# For @Mlo_Userbot
 """Check if your userbot is working."""
 import time
 from datetime import datetime
@@ -7,9 +7,9 @@ from io import BytesIO
 import requests
 from PIL import Image
 
-from telebot import ALIVE_NAME, CMD_HELP, telever
-from telebot.__init__ import StartTime
-from telebot.telebotConfig import Config, Var
+from mlobot import ALIVE_NAME, CMD_HELP, telever
+from mlobot.__init__ import StartTime
+from mlobot.mlobotConfig import Config, Var
 
 # ======CONSTANTS=========#
 CUSTOM_ALIVE = (
@@ -57,8 +57,8 @@ def get_readable_time(seconds: int) -> str:
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@TeleBotSupport"
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="alive"))
-@telebot.on(sudo_cmd(outgoing=True, pattern="alive", allow_sudo=True))
+@mlobot.on(admin_cmd(outgoing=True, pattern="alive"))
+@mlobot.on(sudo_cmd(outgoing=True, pattern="alive", allow_sudo=True))
 async def amireallyalive(alive):
     start = datetime.now()
     myid = bot.uid
@@ -67,27 +67,27 @@ async def amireallyalive(alive):
     (end - start).microseconds / 1000
     uptime = get_readable_time((time.time() - StartTime))
     if ALV_PIC:
-        tele = f"**Welcome To TeleBot **\n\n"
+        tele = f"**Welcøme Tø Mløbøt **\n\n"
         tele += f"`{CUSTOM_ALIVE}`\n\n"
         tele += (
             f"{telemoji} **Telethon version**: `1.17`\n{telemoji} **Python**: `3.8.3`\n"
         )
         tele += f"{telemoji} **TeleBot Version**: `{telever}`\n"
-        tele += f"{telemoji} **More Info**: @TeleBotSupport\n"
+        tele += f"{telemoji} **More Info**: @Mlo_Userbot\n"
         tele += f"{telemoji} **Sudo** : `{sudo}`\n"
         tele += f"{telemoji} **TeleBot Uptime**: `{uptime}`\n"
-        tele += f"{telemoji} **Database Status**: `All OK 👌!`\n"
+        tele += f"{telemoji} **Database Status**: `All OK Saar👌!`\n"
         tele += (
-            f"{telemoji} **My pro owner** : [{DEFAULTUSER}](tg://user?id={myid})\n\n"
+            f"{telemoji} **My King** : [{DEFAULTUSER}](tg://user?id={myid})\n\n"
         )
-        tele += "    [✨ GitHub Repository ✨](https://github.com/xditya/TeleBot)"
+        tele += "    [✨ GitHub Repository ✨](https://github.com/prashu32/Mlobot)"
         await alive.get_chat()
         await alive.delete()
         """ For .alive command, check if the bot is running.  """
         await borg.send_file(alive.chat_id, ALV_PIC, caption=tele, link_preview=False)
         await alive.delete()
         return
-    req = requests.get("https://telegra.ph/file/0670190de8e3bddea6d95.png")
+    req = requests.get("https://telegra.ph/file/d7cfc36950a53f24d052c.jpg")
     req.raise_for_status()
     file = BytesIO(req.content)
     file.seek(0)
@@ -98,16 +98,16 @@ async def amireallyalive(alive):
         sticker.seek(0)
         await borg.send_message(
             alive.chat_id,
-            f"**Welcome To TeleBot **\n\n"
+            f"**Welcøme Tø Mløbøt  **\n\n"
             f"`{CUSTOM_ALIVE}`\n\n"
             f"{telemoji} **Telethon version**: `1.17`\n{telemoji} **Python**: `3.8.3`\n"
             f"{telemoji} **TeleBot Version**: `{telever}`\n"
             f"{telemoji} **More Info**: @TeleBotSupport\n"
             f"{telemoji} **Sudo** : `{sudo}`\n"
             f"{telemoji} **TeleBot Uptime**: `{uptime}`\n"
-            f"{telemoji} **Database Status**: `All OK 👌!`\n"
-            f"{telemoji} **My pro owner** : [{DEFAULTUSER}](tg://user?id={myid})\n\n"
-            "    [✨ GitHub Repository ✨](https://github.com/xditya/TeleBot)",
+            f"{telemoji} **Database Status**: `All OK saar👌!`\n"
+            f"{telemoji} **My King** : [{DEFAULTUSER}](tg://user?id={myid})\n\n"
+            "    [✨ GitHub Repository ✨](https://github.com/prashu32/Mlobot)",
             link_preview=False,
         )
         await borg.send_file(alive.chat_id, file=sticker)
