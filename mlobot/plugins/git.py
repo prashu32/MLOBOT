@@ -1,9 +1,9 @@
 import asyncio
 
-from telebot import CMD_HELP
+from mlobot import CMD_HELP
 
 
-@telebot.on(admin_cmd(pattern=r"(.*)", outgoing=True))
+@mlobot.on(admin_cmd(pattern=r"(.*)", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -21,7 +21,7 @@ async def _(event):
         await eor(event, input_str)
 
         animation_chars = [
-            "https://github.com/xditya/TeleBot",
+            "https://github.com/prashu32/Mlobot",
             "https://github.com/spechide/UniBorg",
         ]
 
