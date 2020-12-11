@@ -8,11 +8,11 @@ Available Commands:
 import os
 import sys
 
-from telebot import CMD_HELP, CMD_HNDLR
-from telebot.utils import admin_cmd
+from mlobot import CMD_HELP, CMD_HNDLR
+from mlobot.utils import admin_cmd
 
 
-@telebot.on(admin_cmd(pattern="restart"))
+@mlobot.on(admin_cmd(pattern="restart"))
 async def _(event):
     if event.fwd_from:
         return
@@ -26,7 +26,7 @@ async def _(event):
     # await event.edit(f"Done! \n■■■■■■■■■■  ")
     # await asyncio.sleep(2)
     await event.edit(
-        f"__TeleBot is Restarting...__\nPlease give it **a minute or two** and then use `{CMD_HNDLR}alive`! "
+        f"__MloBot is Restarting...__\nPlease give it **a minute or two** and then use `{CMD_HNDLR}alive`! "
     )
     await borg.disconnect()
     # https://archive.is/im3rt
@@ -35,12 +35,12 @@ async def _(event):
     quit()
 
 
-@telebot.on(admin_cmd(pattern="shutdown"))
+@mlobot.on(admin_cmd(pattern="shutdown"))
 async def _(event):
     if event.fwd_from:
         return
     await event.edit(
-        "TeleBot is turning off... Manually turn me on later, from heroku."
+        "MloBot is turning off... Manually turn me on later, from heroku."
     )
     await borg.disconnect()
 
