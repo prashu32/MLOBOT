@@ -7,11 +7,11 @@ Fetch App Details from Playstore.
 import bs4
 import requests
 
-from telebot import CMD_HELP
+from mlobot import CMD_HELP
 
 
-@telebot.on(admin_cmd(pattern="app (.*)"))
-@telebot.on(sudo_cmd(pattern="app (.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="app (.*)"))
+@mlobot.on(sudo_cmd(pattern="app (.*)", allow_sudo=True))
 async def apk(event):
     app_name = event.pattern_match.group(1)
     event = await edit_or_reply(event, "Finding your app!")
@@ -143,7 +143,7 @@ async def apkr(event):
             + "'>View in Play Store</a>"
         )
         app_details += "\n\n<b>Download : </b> <a href='https://t.me/joinchat/JCu-H1NikiYDgNjpjPYd4A'>Request_Here</a>"
-        app_details += "\n\n===> TeleBot <==="
+        app_details += "\n\n===> Mlobot <==="
         await event.edit(app_details, link_preview=True, parse_mode="HTML")
     except IndexError:
         await event.edit("No result found in search. Please enter **Valid app name**")
