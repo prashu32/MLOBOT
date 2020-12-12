@@ -1,4 +1,4 @@
-# By @xditya Copy with credits
+# By @mbbs_lover Copy with credits
 # Thanks to @HEisenbergTheDanger
 from telethon import functions
 from uniborg.util import admin_cmd
