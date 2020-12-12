@@ -1,5 +1,5 @@
-#    TeleBot - UserBot
-#    Copyright (C) 2020 TeleBot
+#    Mlobot - UserBot
+#    Copyright (C) 2020 Mlobot
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -24,17 +24,17 @@ heroku_api = "https://api.heroku.com"
 sudousers = os.environ.get("SUDO_USERS", None)
 
 
-@telebot.on(admin_cmd(pattern="sudo"))
+@mlobot.on(admin_cmd(pattern="sudo"))
 async def sudo(event):
     sudo = "True" if Config.SUDO_USERS else "False"
     users = os.environ.get("SUDO_USERS", None)
     if sudo == "True":
-        await eor(event, f"**TeleBot**\nSudo - `Enabled`\nSudo user(s) - `{users}`")
+        await eor(event, f"**Mlobot**\nSudo - `Enabled`\nSudo user(s) - `{users}`")
     else:
-        await eor(event, f"**TeleBot**\nSudo - `Disabled`")
+        await eor(event, f"**Mlobot**\nSudo - `Disabled`")
 
 
-@telebot.on(admin_cmd(pattern="prefix"))
+@mlobot.on(admin_cmd(pattern="prefix"))
 async def handler(event):
     hndlr = Config.CMD_HNDLR
     if hndlr == r"\.":
@@ -46,7 +46,7 @@ async def handler(event):
     await eor(event, f"Command Handler - {x}\nSudo Handler - {sudohndlr}")
 
 
-@telebot.on(admin_cmd(pattern="addsudo(?: |$)"))
+@mlobot.on(admin_cmd(pattern="addsudo(?: |$)"))
 async def tb(event):
     ok = await eor(event, "Adding user as a sudo...")
     telebot = "SUDO_USERS"
@@ -67,7 +67,7 @@ async def tb(event):
     else:
         newsudo = f"{target}"
     await ok.edit(f"Added `{target}` as a sudo user. Restarting.. Give me a minute...")
-    heroku_var[telebot] = newsudo
+    heroku_var[mlobot] = newsudo
 
 
 async def get_user(event):
