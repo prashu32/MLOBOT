@@ -33,5 +33,5 @@ jobs:
           commit_options: '--no-verify'
           repository: .
           commit_user_name: prashu32
-          commit_user_email: 58950863+xditya@users.noreply.github.com
+          commit_user_email: 58950863+prashu32@users.noreply.github.com
           commit_author:  <58950863+prashu32@users.noreply.github.com>
