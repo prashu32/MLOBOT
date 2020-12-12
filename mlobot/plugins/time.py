@@ -7,18 +7,18 @@ from datetime import datetime
 
 from PIL import Image, ImageDraw, ImageFont
 
-from telebot.utils import admin_cmd
+from mlobot.utils import admin_cmd
 
 FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 
 
-@telebot.on(admin_cmd(pattern="time ?(.*)"))  # pylint:disable=E0602
-@telebot.on(sudo_cmd(pattern="time ?(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="time ?(.*)"))  # pylint:disable=E0602
+@mlobot.on(sudo_cmd(pattern="time ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
     current_time = datetime.now().strftime(
-        "⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡ \n⚡ TeleBot TIMEZONE⚡ \n LOCATION: India \n  Time: %H:%M:%S \n  Date: %d.%m.%y \n⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡"
+        "🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺 \n🌺 MLOBOT TIMEZONE🌺 \n LOCATION: India \n  Time: %H:%M:%S \n  Date: %d.%m.%y \n🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺"
     )
     start = datetime.now()
     input_str = event.pattern_match.group(1)
@@ -42,7 +42,7 @@ async def _(event):
     await borg.send_file(  # pylint:disable=E0602
         event.chat_id,
         required_file_name,
-        caption="TeleBot: Powered by @TeleBotHelp",
+        caption="MloBot: Powered by @Mlo_Userbot",
         # Courtesy: @ManueI15
         reply_to=reply_msg_id,
     )
@@ -54,8 +54,8 @@ async def _(event):
     await event.delete()
 
 
-@telebot.on(admin_cmd(pattern="gtime (.*)"))  # pylint:disable=E0602
-@telebot.on(sudo_cmd(pattern="gtime (.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="gtime (.*)"))  # pylint:disable=E0602
+@mlobot.on(sudo_cmd(pattern="gtime (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
