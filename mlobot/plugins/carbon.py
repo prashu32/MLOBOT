@@ -1,7 +1,7 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.
 # Licensed under the Raphielscape Public License, Version 1.b (the "License");
 # you may not use this file except in compliance with the License.
-# @TeleBotSupport
+# @Mlo_userbot
 
 """ Userbot module containing various scrapers. """
 import os
@@ -13,15 +13,15 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 
-from telebot import CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN
-from telebot.utils import admin_cmd, sudo_cmd
+from mlobot import CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN
+from mlobot.utils import admin_cmd, sudo_cmd
 
 CARBONLANG = "auto"
 LANG = "en"
 
 
-@telebot.on(admin_cmd(pattern="carbon"))
-@telebot.on(sudo_cmd(pattern="carbon", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="carbon"))
+@mlobot.on(sudo_cmd(pattern="carbon", allow_sudo=True))
 async def carbon_api(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
 
@@ -94,7 +94,7 @@ async def carbon_api(e):
         await e.client.send_file(
             e.chat_id,
             file,
-            caption="`Here's your carbon!` \n<< **Carbonised By TeleBot**>>\n**Colour Scheme: **`{}`".format(
+            caption="`Here's your carbon!` \n<< **Carbonised By MloBot**>>\n**Colour Scheme: **`{}`".format(
                 color_name
             ),
             force_document=True,
