@@ -1,4 +1,4 @@
-# Made By @TeleBotHelp Keep Credits If You Are Goanna Kang This Lol
+# FOR MLOBOT
 # And Thanks To The Creator Of Autopic This Script Was Made from Snippets From That Script
 # Usage .actressdp I'm Not Responsible For Any Ban caused By This
 
@@ -11,7 +11,7 @@ import urllib
 import requests
 from telethon.tl import functions
 
-from telebot import CMD_HELP
+from mlobot import CMD_HELP
 
 COLLECTION_STRING = [
     "cute-anime-wallpapers-hd",
@@ -50,11 +50,11 @@ async def animepp():
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
 
-@telebot.on(admin_cmd(pattern="animedp ?(.*)"))
+@mlobot.on(admin_cmd(pattern="animedp ?(.*)"))
 async def main(event):
 
     await event.edit(
-        "**Starting Anime Profile Pic...\n\nDone !!! Check Your DP in 5 seconds. By [TeleBot](https://github.com/xditya/TeleBot)**"
+        "**Starting Anime Profile Pic...\n\nDone !!! Check Your DP in 5 seconds. By [Mlobot](https://github.com/prashu32/Mlobot)**"
     )
 
     while True:
