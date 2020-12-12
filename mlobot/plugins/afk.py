@@ -1,5 +1,5 @@
-#    TeleBot - UserBot
-#    Copyright (C) 2020 TeleBot
+#    Mlobot - UserBot
+#    Copyright (C) 2020 Mlobot
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -15,9 +15,8 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 # Based of AFK by @SpEcHIDe
-# Media Afk, Time, by @xditya
 """
-AFK Plugin for TeleBot
+AFK Plugin for MloBot
 Syntax: .afk REASON
 """
 import asyncio
@@ -28,8 +27,8 @@ from telegraph import Telegraph, upload_file
 from telethon import Button, events
 from telethon.tl import functions, types
 
-from telebot import CMD_HELP
-from telebot.telebotConfig import Config, Var
+from mlobot import CMD_HELP
+from mlobot.mlobotConfig import Config, Var
 
 # --=============================================--#
 global USER_AFK  # pylint:disable=E0602
@@ -58,7 +57,7 @@ auth_url = r["auth_url"]
 # --=============================================--#
 
 
-@telebot.on(
+@mlobot.on(
     events.NewMessage(incoming=True, func=lambda e: bool(e.mentioned or e.is_private))
 )
 async def on_afk(event):
@@ -130,13 +129,13 @@ async def on_afk(event):
                         ],
                     )
                 except BaseException:
-                    await telebot.send_message(
+                    await mlobot.send_message(
                         Var.PRIVATE_GROUP_ID,
                         f"Please add {MYBOT} here for afk tags to work.",
                     )
 
 
-@telebot.on(admin_cmd(pattern=r"afk ?(.*)"))
+@mlobot.on(admin_cmd(pattern=r"afk ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -157,7 +156,7 @@ async def _(event):
     if not USER_AFK:
         if event.reply_to_msg_id:
             reply_message = await event.get_reply_message()
-            media = await telebot.download_media(reply_message, "AFK_media")
+            media = await mlobot.download_media(reply_message, "AFK_media")
             try:
                 url = upload_file(media)
                 os.remove(media)
@@ -206,7 +205,7 @@ async def _(event):
                 )
 
 
-@telebot.on(events.NewMessage(outgoing=True))
+@mlobot.on(events.NewMessage(outgoing=True))
 async def set_not_afk(event):
     global USER_AFK
     global afk_time
