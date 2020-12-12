@@ -14,8 +14,8 @@ from telethon.errors import ChatAdminRequiredError, UserAdminInvalidError
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
 
-from telebot.telebotConfig import Var
-from telebot.utils import admin_cmd
+from mlobot.mlobotConfig import Var
+from mlobot.utils import admin_cmd
 
 # =================== CONSTANT ===================
 
@@ -48,8 +48,8 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ================================================
 
 
-@telebot.on(admin_cmd(pattern="zombies(?: |$)(.*)", outgoing=True))
-@telebot.on(sudo_cmd(pattern=f"zombies", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="zombies(?: |$)(.*)", outgoing=True))
+@mlobot.on(sudo_cmd(pattern=f"zombies", allow_sudo=True))
 async def rm_deletedacc(show):
     """ For .zombies command, list all the ghost/deleted/zombie accounts in a chat. """
 
