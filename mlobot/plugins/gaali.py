@@ -1,10 +1,10 @@
 from telethon.tl.types import ChannelParticipantsAdmins
 from uniborg.util import admin_cmd
 
-from telebot import CMD_HELP
+from mlobot import CMD_HELP
 
 
-@telebot.on(admin_cmd(pattern="gaali"))
+@mlobot.on(admin_cmd(pattern="gaali"))
 async def _(event):
     if event.fwd_from:
         return
