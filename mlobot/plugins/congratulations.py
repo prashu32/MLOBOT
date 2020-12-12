@@ -1,6 +1,6 @@
 import random
 
-from telebot import CMD_HELP
+from mlobot import CMD_HELP
 
 RUNSREACTS = [
     "`Congratulations and BRAVO!`",
@@ -16,8 +16,8 @@ RUNSREACTS = [
 ]
 
 
-@telebot.on(admin_cmd(pattern="congo"))
-@telebot.on(sudo_cmd(pattern="congo", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="congo"))
+@mlobot.on(sudo_cmd(pattern="congo", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
