@@ -41,7 +41,7 @@ def choser(cmd, pack, blacklist=None):
 
 choser(
     "sticklol",
-    "TeleBot_LOLPack",
+    "MloBot_LOLPack",
     {
         3088919966519394666,
         3088919966519394334,
