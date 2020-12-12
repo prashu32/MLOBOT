@@ -4,15 +4,15 @@ from asyncio import sleep
 
 from telethon.errors import rpcbaseerrors
 
-from telebot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from telebot.telebotConfig import Var
-from telebot.utils import admin_cmd, errors_handler
+from mlobot import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from mlobot.mlobotConfig import Var
+from mlobot.utils import admin_cmd, errors_handler
 
 BOTLOG_CHATID = Var.PRIVATE_GROUP_ID
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="purge"))
-@telebot.on(sudo_cmd(allow_sudo=True, pattern="purge"))
+@mlobot.on(admin_cmd(outgoing=True, pattern="purge"))
+@mlobot.on(sudo_cmd(allow_sudo=True, pattern="purge"))
 @errors_handler
 async def fastpurger(purg):
     """ For .purge command, purge all messages starting from the reply. """
@@ -43,7 +43,7 @@ async def fastpurger(purg):
     await done.delete()
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="purgeme"))
+@mlobot.on(admin_cmd(outgoing=True, pattern="purgeme"))
 @errors_handler
 async def purgeme(delme):
     """ For .purgeme, delete x count of your latest message."""
@@ -70,7 +70,7 @@ async def purgeme(delme):
     await smsg.delete()
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="del"))
+@mlobot.on(admin_cmd(outgoing=True, pattern="del"))
 @errors_handler
 async def delete_it(delme):
     """ For .del command, delete the replied message. """
@@ -90,7 +90,7 @@ async def delete_it(delme):
                 )
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="edit"))
+@mlobot.on(admin_cmd(outgoing=True, pattern="edit"))
 @errors_handler
 async def editer(edit):
     """ For .editme command, edit your last message. """
@@ -111,7 +111,7 @@ async def editer(edit):
         )
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="sd"))
+@mlobot.on(admin_cmd(outgoing=True, pattern="sd"))
 @errors_handler
 async def selfdestruct(destroy):
     """ For .sd command, make seflf-destructable messages. """
