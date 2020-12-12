@@ -5,12 +5,12 @@ import io
 
 import requests
 
-from telebot import CMD_HELP
-from telebot.utils import admin_cmd
+from mlobot import CMD_HELP
+from mlobot.utils import admin_cmd
 
 
-@telebot.on(admin_cmd(pattern="screencapture (.*)"))
-@telebot.on(sudo_cmd(pattern="screencapture (.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="screencapture (.*)"))
+@mlobot.on(sudo_cmd(pattern="screencapture (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
