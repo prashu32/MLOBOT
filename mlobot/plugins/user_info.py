@@ -22,8 +22,8 @@ from telethon.tl.types import (
     MessageEntityMentionName,
 )
 
-from telebot import CMD_HELP
-from telebot.utils import admin_cmd
+from mlobot import CMD_HELP
+from mlobot.utils import admin_cmd
 
 
 def parse_arguments(message: str, valid: List[str]) -> (dict, str):
@@ -287,8 +287,8 @@ class TGDoc:
         return "\n\n".join([str(section) for section in self.sections])
 
 
-@telebot.on(admin_cmd(pattern=r"u(?:ser)?(\s+[\S\s]+|$)", outgoing=True))
-@telebot.on(sudo_cmd(pattern=r"u(?:ser)?(\s+[\S\s]+|$)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern=r"u(?:ser)?(\s+[\S\s]+|$)", outgoing=True))
+@mlobot.on(sudo_cmd(pattern=r"u(?:ser)?(\s+[\S\s]+|$)", allow_sudo=True))
 async def who(event: NewMessage.Event):
     """ For .user command, get info about a user. """
     if event.fwd_from:
