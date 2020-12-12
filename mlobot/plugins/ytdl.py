@@ -85,8 +85,8 @@ def time_formatter(milliseconds: int) -> str:
     return tmp[:-2]
 
 
-@telebot.on(admin_cmd(pattern="yt(a|v) (.*)"))
-@telebot.on(sudo_cmd(pattern="yt(a|v) (.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="yt(a|v) (.*)"))
+@mlobot.on(sudo_cmd(pattern="yt(a|v) (.*)", allow_sudo=True))
 async def download_video(v_url):
     """ For .ytdl command, download media from YouTube and many other sites. """
     url = v_url.pattern_match.group(2)
