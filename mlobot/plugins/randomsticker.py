@@ -10,8 +10,8 @@ import random
 
 from telethon import functions, types, utils
 
-from telebot import CMD_HELP
-from telebot.utils import admin_cmd
+from mlobot import CMD_HELP
+from mlobot.utils import admin_cmd
 
 
 def choser(cmd, pack, blacklist=None):
@@ -19,7 +19,7 @@ def choser(cmd, pack, blacklist=None):
         blacklist = {}
     docs = None
 
-    @telebot.on(admin_cmd(pattern=rf"{cmd}", outgoing=True))
+    @mlobot.on(admin_cmd(pattern=rf"{cmd}", outgoing=True))
     async def handler(event):
         await event.delete()
 
