@@ -7,13 +7,13 @@ from telethon.errors import FloodWaitError
 from telethon.tl import functions
 from uniborg.util import admin_cmd
 
-from telebot import ALIVE_NAME, CMD_HELP
+from mlobot import ALIVE_NAME, CMD_HELP
 
 DEL_TIME_OUT = 60
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mlobot User"
 
 
-@telebot.on(admin_cmd(pattern="autoname"))  # pylint:disable=E0602
+@mlobot.on(admin_cmd(pattern="autoname"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
