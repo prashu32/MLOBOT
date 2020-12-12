@@ -1,5 +1,4 @@
 # (c) Shrimadhav U K
-#
 # This file is part of @UniBorg
 #
 # @UniBorg is free software; you cannot redistribute it and/or modify
@@ -21,12 +20,12 @@ from datetime import datetime
 
 import requests
 
-from telebot import CMD_HELP
-from telebot.utils import admin_cmd
+from mlobot import CMD_HELP
+from mlobot.utils import admin_cmd
 
 
-@telebot.on(admin_cmd(pattern=r"remove\.bg ?(.*)"))
-@telebot.on(sudo_cmd(pattern=r"remove\.bg ?(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern=r"remove\.bg ?(.*)"))
+@mlobot.on(sudo_cmd(pattern=r"remove\.bg ?(.*)", allow_sudo=True))
 async def _(event):
     HELP_STR = "`.remove.bg` as reply to a media, or give a link as an argument to this command"
     if event.fwd_from:
