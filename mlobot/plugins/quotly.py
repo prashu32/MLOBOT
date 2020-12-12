@@ -4,7 +4,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from uniborg.util import admin_cmd
 
-from telebot import CMD_HELP
+from mlobot import CMD_HELP
 
 
 @mlobot.on(admin_cmd(pattern="qbot ?(.*)"))
