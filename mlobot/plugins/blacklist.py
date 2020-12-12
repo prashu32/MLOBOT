@@ -10,12 +10,12 @@ import re
 
 from telethon import events
 
-import telebot.plugins.sql_helper.blacklist_sql as sql
-from telebot import CMD_HELP
-from telebot.utils import admin_cmd
+import mlobot.plugins.sql_helper.blacklist_sql as sql
+from mlobot import CMD_HELP
+from mlobot.utils import admin_cmd
 
 
-@telebot.on(events.NewMessage(incoming=True))
+@mlobot.on(events.NewMessage(incoming=True))
 async def on_new_message(event):
     # TODO: exempt admins from locks
     name = event.raw_text
@@ -31,8 +31,8 @@ async def on_new_message(event):
             break
 
 
-@telebot.on(admin_cmd(pattern="addblacklist ((.|\n)*)"))
-@telebot.on(sudo_cmd(pattern="addblacklist ((.|\n)*)"))
+@mlobot.on(admin_cmd(pattern="addblacklist ((.|\n)*)"))
+@mlobot.on(sudo_cmd(pattern="addblacklist ((.|\n)*)"))
 async def on_add_black_list(event):
     text = event.pattern_match.group(1)
     to_blacklist = list(
@@ -48,8 +48,8 @@ async def on_add_black_list(event):
     )
 
 
-@telebot.on(admin_cmd(pattern="listblacklist"))
-@telebot.on(sudo_cmd(pattern="listblacklist"))
+@mlobot.on(admin_cmd(pattern="listblacklist"))
+@mlobot.on(sudo_cmd(pattern="listblacklist"))
 async def on_view_blacklist(event):
     all_blacklisted = sql.get_chat_blacklist(event.chat_id)
     OUT_STR = "Blacklists in the Current Chat:\n"
@@ -74,8 +74,8 @@ async def on_view_blacklist(event):
         await eor(event, OUT_STR)
 
 
-@telebot.on(admin_cmd(pattern="rmblacklist ((.|\n)*)"))
-@telebot.on(sudo_cmd(pattern="rmblacklist ((.|\n)*)"))
+@mlobot.on(admin_cmd(pattern="rmblacklist ((.|\n)*)"))
+@mlobot.on(sudo_cmd(pattern="rmblacklist ((.|\n)*)"))
 async def on_delete_blacklist(event):
     text = event.pattern_match.group(1)
     to_unblacklist = list(
