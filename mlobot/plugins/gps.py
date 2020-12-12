@@ -5,7 +5,7 @@ credits :@mrconfused
 
 # help from @sunda005 and @SpEcHIDe
 # don't edit credits
-# Plugin for TeleBot
+# Plugin for Mlobot
 
 from geopy.geocoders import Nominatim
 from telethon.tl import types
@@ -14,8 +14,8 @@ from telebot import CMD_HELP
 from telebot.utils import admin_cmd
 
 
-@telebot.on(admin_cmd(pattern="gps ?(.*)"))
-@telebot.on(sudo_cmd(pattern="gps ?(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="gps ?(.*)"))
+@mlobot.on(sudo_cmd(pattern="gps ?(.*)", allow_sudo=True))
 async def gps(event):
     if event.fwd_from:
         return
