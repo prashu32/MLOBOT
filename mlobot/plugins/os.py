@@ -10,10 +10,10 @@ Available Commands:
 
 import asyncio
 
-from telebot.utils import admin_cmd
+from mlobot.utils import admin_cmd
 
 
-@telebot.on(admin_cmd(pattern=r"(.*)", outgoing=True))
+@mlobot.on(admin_cmd(pattern=r"(.*)", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -51,7 +51,7 @@ async def _(event):
             await event.edit(animation_chars[i % 11])
 
 
-@telebot.on(admin_cmd(pattern=r"(.*)", outgoing=True))
+@mlobot.on(admin_cmd(pattern=r"(.*)", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -89,7 +89,7 @@ async def _(event):
             await event.edit(animation_chars[i % 11])
 
 
-@telebot.on(admin_cmd(pattern=r"(.*)", outgoing=True))
+@mlobot.on(admin_cmd(pattern=r"(.*)", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -127,7 +127,7 @@ async def _(event):
             await event.edit(animation_chars[i % 11])
 
 
-@telebot.on(admin_cmd(pattern=r"(.*)", outgoing=True))
+@mlobot.on(admin_cmd(pattern=r"(.*)", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -165,7 +165,7 @@ async def _(event):
             await event.edit(animation_chars[i % 11])
 
 
-@telebot.on(admin_cmd(pattern=r"(.*)", outgoing=True))
+@mlobot.on(admin_cmd(pattern=r"(.*)", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -189,7 +189,7 @@ async def _(event):
             "__Current Loaded OS: Symbian OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.macos`\n☑️ `.windows`\n☑️ `.linux`\n☑️ `.stock`",
             "__Current Loaded OS: Symbian OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.macos`\n✅ `.windows`\n☑️ `.linux`\n☑️ `.stock`",
             "__Current Loaded OS: Symbian OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.macos`\n✅ `.windows`\n✅ `.linux`\n☑️ `.stock`",
-            "__Current Loaded OS: Symbian OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.macos`\n✅ `.windows`\n✅ `.linux`\n✅ `.stock`\n\nDeveloped By: @shivamkchoudhary",
+            "__Current Loaded OS: Symbian OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.macos`\n✅ `.windows`\n✅ `.linux`\n✅ `.stock`\n\nDeveloped By: @Mbbs_lover",
         ]
 
         for i in animation_ttl:
