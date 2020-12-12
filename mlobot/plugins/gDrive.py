@@ -20,7 +20,7 @@ from oauth2client.file import Storage
 from telethon import events
 from uniborg.util import admin_cmd
 
-from telebot.utils import admin_cmd
+from mlobot.utils import admin_cmd
 
 # Path to token json file, it should be in same directory as script
 G_DRIVE_TOKEN_FILE = Var.TEMP_DOWNLOAD_DIRECTORY + "/auth_token.txt"
@@ -35,7 +35,7 @@ parent_id = Var.GDRIVE_FOLDER_ID
 G_DRIVE_DIR_MIME_TYPE = "application/vnd.google-apps.folder"
 
 
-@telebot.on(admin_cmd(pattern="ugdrive ?(.*)"))
+@mlobot.on(admin_cmd(pattern="ugdrive ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -117,7 +117,7 @@ async def _(event):
         await mone.edit("File Not found in local server. Give me a file path :((")
 
 
-@telebot.on(admin_cmd(pattern="drivesch ?(.*)"))
+@mlobot.on(admin_cmd(pattern="drivesch ?(.*)"))
 async def sch(event):
     if event.fwd_from:
         return
@@ -193,7 +193,7 @@ async def gsearch(http, query, filename):
     return msg
 
 
-@telebot.on(admin_cmd(pattern="gdrivedir ?(.*)"))
+@mlobot.on(admin_cmd(pattern="gdrivedir ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -370,7 +370,7 @@ async def upload_file(http, file_path, file_name, mime_type, event, parent_id):
     return download_url
 
 
-@telebot.on(admin_cmd(pattern="gfolder ?(.*)"))
+@mlobot.on(admin_cmd(pattern="gfolder ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
