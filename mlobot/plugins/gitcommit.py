@@ -11,13 +11,13 @@ from datetime import datetime
 
 from github import Github
 
-from telebot import CMD_HELP
+from mlobot import CMD_HELP
 
 GIT_TEMP_DIR = "./userbot/temp/"
 
 
-@telebot.on(admin_cmd(pattern="commit", outgoing=True))
-@telebot.on(sudo_cmd(pattern="commit", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="commit", outgoing=True))
+@mlobot.on(sudo_cmd(pattern="commit", allow_sudo=True))
 async def download(event):
     if event.fwd_from:
         return
