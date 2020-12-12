@@ -4,12 +4,12 @@
 
 from telethon.tl.functions.messages import SaveDraftRequest
 
-from telebot import CMD_HELP
-from telebot.utils import admin_cmd
+from mlobot import CMD_HELP
+from mlobot.utils import admin_cmd
 
 
-@telebot.on(admin_cmd(pattern="chain"))
-@telebot.on(sudo_cmd(pattern="chain", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="chain"))
+@mlobot.on(sudo_cmd(pattern="chain", allow_sudo=True))
 async def _(event):
     await eor(event, "Counting...")
     count = -1
