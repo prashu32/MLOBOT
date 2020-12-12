@@ -10,9 +10,9 @@ from telethon import events
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
-from telebot import CMD_HELP
-from telebot.telebotConfig import Var
-from telebot.utils import admin_cmd, register
+from mlobot import CMD_HELP
+from mlobot.telebotConfig import Var
+from mlobot.utils import admin_cmd, register
 
 # ================= CONSTANT =================
 RENDISTR = [
@@ -641,7 +641,7 @@ HIT = [
 # ===========================================
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern=r"(\w+)say (.*)"))
+@mlobot.on(admin_cmd(outgoing=True, pattern=r"(\w+)say (.*)"))
 async def univsaye(cowmsg):
     """ For .cowsay module, userbot wrapper for cow which says things. """
     if not cowmsg.text[0].isalpha() and cowmsg.text[0] not in ("/", "#", "@", "!"):
@@ -658,7 +658,7 @@ async def univsaye(cowmsg):
         await cowmsg.edit(f"`{cheese.milk(text).replace('`', '´')}`")
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern=":/"))
+@mlobot.on(admin_cmd(outgoing=True, pattern=":/"))
 async def kek(keks):
     if not keks.text[0].isalpha() and keks.text[0] not in ("/", "#", "@", "!"):
         """ Check yourself ;)"""
@@ -668,7 +668,7 @@ async def kek(keks):
             await keks.edit(":" + uio[i % 2])
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern=r"coinflip (.*)"))
+@mlobot.on(admin_cmd(outgoing=True, pattern=r"coinflip (.*)"))
 async def _(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         if event.fwd_from:
@@ -699,7 +699,7 @@ async def _(event):
             await event.edit("Gimme another coin, this one fake AF !!")
 
 
-@telebot.on(admin_cmd(pattern="slap(?: |$)(.*)", outgoing=True))
+@mlobot.on(admin_cmd(pattern="slap(?: |$)(.*)", outgoing=True))
 async def who(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         """ slaps a user, or get slapped if not a reply. """
@@ -786,7 +786,7 @@ async def lol(lel):
             await lel.edit(okay)
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="decide"))
+@mlobot.on(admin_cmd(outgoing=True, pattern="decide"))
 async def _(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         if event.fwd_from:
@@ -813,21 +813,21 @@ async def fun(e):
             await e.edit(t)
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="cry"))
+@mlobot.on(admin_cmd(outgoing=True, pattern="cry"))
 async def cry(e):
     """ y u du dis, i cry everytime !! """
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(random.choice(CRI))
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="insult"))
+@mlobot.on(admin_cmd(outgoing=True, pattern="insult"))
 async def insult(e):
     """ I make you cry !! """
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(random.choice(INSULT_STRINGS))
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="cp(?: |$)(.*)"))
+@mlobot.on(admin_cmd(outgoing=True, pattern="cp(?: |$)(.*)"))
 async def copypasta(cp_e):
     """ Copypasta the famous meme """
     if not cp_e.text[0].isalpha() and cp_e.text[0] not in ("/", "#", "@", "!"):
@@ -862,7 +862,7 @@ async def copypasta(cp_e):
         await cp_e.edit(reply_text)
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="vapor(?: |$)(.*)"))
+@mlobot.on(admin_cmd(outgoing=True, pattern="vapor(?: |$)(.*)"))
 async def vapor(vpr):
     """ Vaporize everything! """
     if not vpr.text[0].isalpha() and vpr.text[0] not in ("/", "#", "@", "!"):
@@ -888,7 +888,7 @@ async def vapor(vpr):
         await vpr.edit("".join(reply_text))
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="repo"))
+@mlobot.on(admin_cmd(outgoing=True, pattern="repo"))
 async def repo(event):
     if event.fwd_from:
         return
@@ -900,7 +900,7 @@ async def repo(event):
     await event.delete()
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="str(?: |$)(.*)"))
+@mlobot.on(admin_cmd(outgoing=True, pattern="str(?: |$)(.*)"))
 async def stretch(stret):
     """ Stretch it."""
     if not stret.text[0].isalpha() and stret.text[0] not in ("/", "#", "@", "!"):
@@ -922,7 +922,7 @@ async def stretch(stret):
         await stret.edit(reply_text)
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="zal(?: |$)(.*)"))
+@mlobot.on(admin_cmd(outgoing=True, pattern="zal(?: |$)(.*)"))
 async def zal(zgfy):
     """ Invoke the feeling of chaos. """
     if not zgfy.text[0].isalpha() and zgfy.text[0] not in ("/", "#", "@", "!"):
@@ -959,21 +959,21 @@ async def zal(zgfy):
         await zgfy.edit("".join(reply_text))
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="hi"))
+@mlobot.on(admin_cmd(outgoing=True, pattern="hi"))
 async def hoi(hello):
     """ Greet everyone! """
     if not hello.text[0].isalpha() and hello.text[0] not in ("/", "#", "@", "!"):
         await hello.edit(random.choice(HELLOSTR))
 
 
-@telebot.on(admin_cmd(pattern=r"hi2"))
+@mlobot.on(admin_cmd(pattern=r"hi2"))
 async def hi(event):
     if event.fwd_from:
         return
     await event.edit("🌺✨✨🌺✨🌺🌺🌺\n🌺✨✨🌺✨✨🌺✨\n🌺🌺🌺🌺✨✨🌺✨\n🌺✨✨🌺✨✨🌺✨\n🌺✨✨🌺✨🌺🌺🌺\n☁☁☁☁☁☁☁☁")
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="kill"))
+@mlobot.on(admin_cmd(outgoing=True, pattern="kill"))
 async def killing(killed):
     """ Dont Kill Too much -_-"""
     if not killed.text[0].isalpha() and killed.text[0] not in ("/", "#", "@", "!"):
@@ -1384,7 +1384,7 @@ async def typewriter(typew):
             await asyncio.sleep(sleep_time)
 
 
-@telebot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
+@mlobot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -1419,7 +1419,7 @@ async def _(event):
             await event.edit(animation_chars[i % 10])
 
 
-@telebot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
+@mlobot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
@@ -1466,7 +1466,7 @@ Available Commands:
 .emoji -_-"""
 
 
-@telebot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
+@mlobot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 async def _(event):
 
     if event.fwd_from:
