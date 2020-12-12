@@ -1,15 +1,14 @@
-# Made For DARK COBRA and TELEBOT...
-# Made by team cobra with @xditya
+# Made For DARK COBRA and MLOBOT...
 # Retrieves the name history and the username history of the replied user..
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from telebot import CMD_HELP
+from mlobot import CMD_HELP
 
 
-@telebot.on(admin_cmd(pattern="sg ?(.*)"))
-@telebot.on(sudo_cmd(pattern="sg ?(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="sg ?(.*)"))
+@mlobot.on(sudo_cmd(pattern="sg ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -45,9 +44,9 @@ async def _(event):
             await event.edit("User never changed his Username...")
         else:
             await event.delete()
-            await telebot.send_message(event.chat_id, response2.message)
+            await mlobot.send_message(event.chat_id, response2.message)
 
-            await telebot.send_message(event.chat_id, response3.message)
+            await mlobot.send_message(event.chat_id, response3.message)
 
 
 CMD_HELP.update(
