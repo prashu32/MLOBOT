@@ -1,13 +1,13 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from telebot.utils import admin_cmd, sudo_cmd
+from mlobot.utils import admin_cmd, sudo_cmd
 
 # (c)2020 TeleBot
 
 
-@telebot.on(admin_cmd(pattern="stickerize(?: |)(.*)"))
-@telebot.on(sudo_cmd(allow_sudo=True, pattern="stickerize(?: |$)(.*)"))
+@mlobot.on(admin_cmd(pattern="stickerize(?: |)(.*)"))
+@mlobot.on(sudo_cmd(allow_sudo=True, pattern="stickerize(?: |$)(.*)"))
 async def _(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
