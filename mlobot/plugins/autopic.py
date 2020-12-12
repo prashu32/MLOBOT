@@ -1,5 +1,5 @@
-#    TeleBot - UserBot
-#    Copyright (C) 2020 TeleBot
+#    Mlobot - UserBot
+#    Copyright (C) 2020 Mlobot
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -24,8 +24,8 @@ from datetime import datetime
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl import functions
 
-from telebot import *
-from telebot import AUTO_PIC_FONT, AUTOPIC_FONT_COLOUR, AUTOPIC_TEXT, CMD_HELP
+from mlobot import *
+from mlobot import AUTO_PIC_FONT, AUTOPIC_FONT_COLOUR, AUTOPIC_TEXT, CMD_HELP
 
 fntz = str(AUTO_PIC_FONT) if AUTO_PIC_FONT else "DejaVuSans.ttf"
 FONT_FILE_TO_USE = f"resources/fonts/{fntz}"
@@ -37,13 +37,13 @@ AUTOPIC_TEXT = (
 COLOUR = str(AUTOPIC_FONT_COLOUR) if AUTOPIC_FONT_COLOUR else (255, 255, 255)
 
 
-@telebot.on(admin_cmd(pattern="autopic"))
+@mlobot.on(admin_cmd(pattern="autopic"))
 async def autopic(event):
     await event.edit("**Autopic has been enabled!!!**")
     a = await event.get_reply_message()
     downloaded_file_name = "userbot/original_pic.png"
-    await telebot.download_media(a, downloaded_file_name)
-    photo = "telebot/photo_pfp.png"
+    await mlobot.download_media(a, downloaded_file_name)
+    photo = "mlobot/photo_pfp.png"
     while True:
         shutil.copy(downloaded_file_name, photo)
         current_time = datetime.now().strftime(
