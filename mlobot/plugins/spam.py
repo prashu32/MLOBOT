@@ -7,7 +7,7 @@
 from asyncio import wait
 
 from mlobot import CMD_HELP
-from mlobot.telebotConfig import Var
+from mlobot.mlobotConfig import Var
 from mlobot.utils import admin_cmd
 
 
