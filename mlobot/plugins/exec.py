@@ -2,11 +2,11 @@ import io
 import sys
 import traceback
 
-from telebot import CMD_HELP
+from mlobot import CMD_HELP
 
 
-@telebot.on(admin_cmd(pattern="exec"))
-@telebot.on(sudo_cmd(pattern="exec", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="exec"))
+@mlobot.on(sudo_cmd(pattern="exec", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
