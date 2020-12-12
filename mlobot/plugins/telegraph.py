@@ -9,15 +9,15 @@ from datetime import datetime
 from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
-from telebot.telebotConfig import Var
+from mlobot.mlobotConfig import Var
 
 telegraph = Telegraph()
 r = telegraph.create_account(short_name=Config.TELEGRAPH_SHORT_NAME)
 auth_url = r["auth_url"]
 
 
-@telebot.on(admin_cmd(pattern="telegraph (media|text) ?(.*)"))
-@telebot.on(sudo_cmd(pattern="telegraph (media|text) ?(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="telegraph (media|text) ?(.*)"))
+@mlobot.on(sudo_cmd(pattern="telegraph (media|text) ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
