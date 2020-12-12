@@ -3,12 +3,12 @@ syntax - .shout message
 
 """
 
-from telebot import CMD_HELP
-from telebot.utils import admin_cmd
+from mlobot import CMD_HELP
+from mlobot.utils import admin_cmd
 
 
-@telebot.on(admin_cmd(pattern=r"shout", outgoing=True))
-@telebot.on(sudo_cmd(pattern=r"shout", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern=r"shout", outgoing=True))
+@mlobot.on(sudo_cmd(pattern=r"shout", allow_sudo=True))
 async def shout(args):
     if args.fwd_from:
         return
