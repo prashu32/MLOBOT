@@ -9,11 +9,11 @@ from shutil import which
 from telebot import ALIVE_NAME, CMD_HELP, telever
 
 # ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "mlobot"
 # ============================================
 
 
-@telebot.on(admin_cmd(pattern="sysd"))
+@mloot.on(admin_cmd(pattern="sysd"))
 async def sysdetails(sysd):
     """ For .sysd command, get system info using neofetch. """
     if not sysd.text[0].isalpha() and sysd.text[0] not in ("/", "#", "@", "!"):
@@ -33,7 +33,7 @@ async def sysdetails(sysd):
             await sysd.edit("`Install neofetch first !!`")
 
 
-@telebot.on(admin_cmd(pattern="version"))
+@mlobot.on(admin_cmd(pattern="version"))
 async def bot_ver(event):
     """ For .botver command, get the bot version. """
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
@@ -69,7 +69,7 @@ async def bot_ver(event):
             )
 
 
-@telebot.on(admin_cmd(pattern="pip(?: |$)(.*)"))
+@mlobot.on(admin_cmd(pattern="pip(?: |$)(.*)"))
 async def pipcheck(pip):
     """ For .pip command, do a pip search. """
     if not pip.text[0].isalpha() and pip.text[0] not in ("/", "#", "@", "!"):
