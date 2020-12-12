@@ -11,8 +11,8 @@ from re import findall
 
 from uniborg.util import admin_cmd
 
-from telebot import CMD_HELP
-from telebot.google_images_download import googleimagesdownload
+from mlobot import CMD_HELP
+from mlobot.google_images_download import googleimagesdownload
 
 
 @mlobot.on(admin_cmd(pattern="img ?(.*)"))
