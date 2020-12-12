@@ -10,7 +10,7 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from telethon.tl.types import DocumentAttributeVideo
 
-from telebot import CMD_HELP
+from mlobot import CMD_HELP
 
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
 extracted = Config.TMP_DOWNLOAD_DIRECTORY + "extracted/"
@@ -18,8 +18,8 @@ if not os.path.isdir(extracted):
     os.makedirs(extracted)
 
 
-@telebot.on(admin_cmd(pattern="zip"))
-@telebot.on(sudo_cmd(pattern="zip", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="zip"))
+@mlobot.on(sudo_cmd(pattern="zip", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -63,8 +63,8 @@ def zipdir(path, ziph):
             os.remove(os.path.join(root, file))
 
 
-@telebot.on(admin_cmd(pattern="unzip"))
-@telebot.on(sudo_cmd(pattern="unzip", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="unzip"))
+@mlobot.on(sudo_cmd(pattern="unzip", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
