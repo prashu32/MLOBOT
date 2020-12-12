@@ -9,21 +9,21 @@ Available Commands:
 from telethon import events, utils
 from telethon.tl import types
 
-from telebot import CMD_HELP
-from telebot.plugins.sql_helper.snips_sql import (
+from mlobot import CMD_HELP
+from mlobot.plugins.sql_helper.snips_sql import (
     add_snip,
     get_all_snips,
     get_snips,
     remove_snip,
 )
-from telebot.utils import admin_cmd
+from mlobot.utils import admin_cmd
 
 TYPE_TEXT = 0
 TYPE_PHOTO = 1
 TYPE_DOCUMENT = 2
 
 
-@telebot.on(events.NewMessage(pattern=r"\#(\S+)", outgoing=True))
+@mlobot.on(events.NewMessage(pattern=r"\#(\S+)", outgoing=True))
 async def on_snip(event):
     name = event.pattern_match.group(1)
     snip = get_snips(name)
@@ -51,7 +51,7 @@ async def on_snip(event):
         await event.delete()
 
 
-@telebot.on(admin_cmd(pattern="snips (.*)"))
+@mlobot.on(admin_cmd(pattern="snips (.*)"))
 async def on_snip_save(event):
     name = event.pattern_match.group(1)
     msg = await event.get_reply_message()
@@ -84,7 +84,7 @@ async def on_snip_save(event):
         await event.edit("Reply to a message with `snips keyword` to save the snip")
 
 
-@telebot.on(admin_cmd(pattern="snipl"))
+@mlobot.on(admin_cmd(pattern="snipl"))
 async def on_snip_list(event):
     all_snips = get_all_snips()
     OUT_STR = "Available Snips:\n"
@@ -109,7 +109,7 @@ async def on_snip_list(event):
         await event.edit(OUT_STR)
 
 
-@telebot.on(admin_cmd(pattern=r"snipd (\S+)"))
+@mlobot.on(admin_cmd(pattern=r"snipd (\S+)"))
 async def on_snip_delete(event):
     name = event.pattern_match.group(1)
     remove_snip(name)
