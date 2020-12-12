@@ -28,7 +28,7 @@ from mlobot.plugins import TELE_NAME
 from mlobot.plugins.mybot.sql.userbase_sql import add_to_userbase, present_in_userbase, full_userbase
 from datetime import datetime
 from telethon import events
-from mlobot.telebotConfig import Var, Config
+from mlobot.mlobotConfig import Var, Config
 from telegraph import Telegraph, upload_file
 from mlobot import CUSTOM_PMPERMIT
 
@@ -87,7 +87,7 @@ async def start_all(event):
                                       [Button.url(
                                           "Mlobot", url="https://github.com/prashu32/Mlobot")],
                                       [Button.inline(
-                                          "Whats this?", data="mlobot")]
+                                          "Whats this?", data="Mlobot")]
                                   ]
                                   )
         else:
@@ -97,7 +97,7 @@ async def start_all(event):
                                          [Button.url(
                                              "Mlobot", url="https://github.com/prashu32/Mlobot")],
                                          [Button.inline(
-                                             "Whats this?", data="mlobot")]
+                                             "Whats this?", data="Mlobot")]
                                      ]
                                      )
 
@@ -140,7 +140,7 @@ async def logs(event):
         event.chat_id,
         "logs.txt",
         reply_to=event.id,
-        caption="**Heroku** TeleBot Logs",
+        caption="**Heroku** Mlobot Logs",
         buttons=[
             [Button.url("View Online", f"{url}")],
             [Button.url("Crashed?", "t.me/spamreporterr")]
@@ -274,7 +274,7 @@ async def bot(event):
                 os.remove(media)
             except BaseException:
                 return await conv.send_message("Error!")
-        telebot = "BOT_PIC"
+        Mlobot = "BOT_PIC"
         if Var.HEROKU_APP_NAME is not None:
             app = Heroku.app(Var.HEROKU_APP_NAME)
         else:
@@ -301,7 +301,7 @@ async def custom(event):
             if themssg == "/cancel":
                 await tgbot.send_message(event.chat_id, "Operation Cancelled.")
                 return
-            telebot = "PMBOT_START_MSSG"
+            mlobot = "PMBOT_START_MSSG"
             if Var.HEROKU_APP_NAME is not None:
                 app = Heroku.app(Var.HEROKU_APP_NAME)
             else:
@@ -320,7 +320,8 @@ async def custom(event):
           )  # pylint: disable=oof
 async def enablee(event):
     if event.sender_id == OWNER_ID:
-        telebot = "LOAD_MYBOT"
+        t
+Mlobot = "LOAD_MYBOT"
         if Var.HEROKU_APP_NAME is not None:
             app = Heroku.app(Var.HEROKU_APP_NAME)
         else:
@@ -425,7 +426,7 @@ async def a_txt(event):
     if event.sender_id == OWNER_ID:
         await event.delete()
         old_alv=Var.CUSTOM_ALIVE if Var.CUSTOM_ALIVE else "Default Alive message"
-        telebot="CUSTOM_ALIVE"
+        mlobot="CUSTOM_ALIVE"
         if Var.HEROKU_APP_NAME is not None:
             app=Heroku.app(Var.HEROKU_APP_NAME)
         else:
@@ -499,7 +500,7 @@ async def a_txt(event):
     if event.sender_id == OWNER_ID:
         await event.delete()
         old_alv= CUSTOM_PMPERMIT if CUSTOM_PMPERMIT else "Default PMSecurity message"
-        telebot="CUSTOM_PMPERMIT"
+       mlobot="CUSTOM_PMPERMIT"
         if Var.HEROKU_APP_NAME is not None:
             app=Heroku.app(Var.HEROKU_APP_NAME)
         else:
@@ -554,7 +555,7 @@ async def alv_pic(event):
             return
         xx = await tgbot.send_message(event.chat_id, "Changing your PMSecurity Pic, please wait for a minute")
         heroku_var=app.config()
-        heroku_var[telebot]=f"{url}"
+        heroku_var[mlobot]=f"{url}"
         mssg=f"Successfully changed your PMSecurity pic. Please wait for a minute.\n"
         await xx.edit(mssg)
     else:
