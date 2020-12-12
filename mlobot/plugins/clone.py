@@ -21,7 +21,7 @@ else:
     BOTLOG_CHATID = Var.PRIVATE_GROUP_ID
 
 
-@telebot.on(admin_cmd(pattern="clone ?(.*)"))
+@mlobot.on(admin_cmd(pattern="clone ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -62,7 +62,7 @@ async def _(event):
     )
     await event.delete()
     await borg.send_message(
-        event.chat_id, "**LET US BE AS ONE**", reply_to=reply_message
+        event.chat_id, "**LET US BE AS ONE OK!**", reply_to=reply_message
     )
     if BOTLOG:
         await event.client.send_message(
@@ -71,7 +71,7 @@ async def _(event):
         )
 
 
-@telebot.on(admin_cmd(pattern="revert$"))
+@mlobot.on(admin_cmd(pattern="revert$"))
 async def _(event):
     if event.fwd_from:
         return
