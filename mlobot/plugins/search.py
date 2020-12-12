@@ -14,8 +14,8 @@ from re import findall
 import requests
 from search_engine_parser import GoogleSearch
 
-from telebot import CMD_HELP
-from telebot.utils import admin_cmd
+from mlobot import CMD_HELP
+from mlobot.utils import admin_cmd
 
 
 @mlobot.on(admin_cmd(outgoing=True, pattern=r"gs (.*)"))
