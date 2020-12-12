@@ -1,5 +1,5 @@
-#    TeleBot - UserBot
-#    Copyright (C) 2020 TeleBot
+#    Mlobot - UserBot
+#    Copyright (C) 2020 Mlobot
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -26,12 +26,12 @@ from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
-from telebot import CMD_HELP
+from mlobot import CMD_HELP
 
 TMP_DOWNLOAD_DIRECTORY = "./"
 
 
-@telebot.on(admin_cmd(pattern="whois(?: |$)(.*)"))
+@mlobot.on(admin_cmd(pattern="whois(?: |$)(.*)"))
 async def who(event):
     """ For .whois command, get info about a user. """
     if event.fwd_from:
