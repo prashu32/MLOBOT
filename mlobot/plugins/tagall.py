@@ -4,13 +4,13 @@
 
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from telebot.utils import admin_cmd
+from mlobot.utils import admin_cmd
 
-# Added to TeleBot by @its_xditya
+# Added to TeleBot by @Mbbs_lover
 
 
-@telebot.on(admin_cmd(pattern=r"administrator", outgoing=True))
-@telebot.on(sudo_cmd(pattern=r"administrator", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern=r"administrator", outgoing=True))
+@mlobot.on(sudo_cmd(pattern=r"administrator", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -27,11 +27,11 @@ async def _(event):
     await event.delete()
 
 
-# Added to TeleBot by @its_xditya
+# Added to MloBot by @Mbbs_lover credit telebot
 
 
-@telebot.on(admin_cmd(pattern=r"tagall", outgoing=True))
-@telebot.on(sudo_cmd(pattern=r"tagall", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern=r"tagall", outgoing=True))
+@mlobot.on(sudo_cmd(pattern=r"tagall", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
