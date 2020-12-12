@@ -3,8 +3,8 @@
 
 import random
 
-from telebot import CMD_HELP
-from telebot.utils import admin_cmd
+from mlobot import CMD_HELP
+from mlobot.utils import admin_cmd
 
 
 @mlobot.on(admin_cmd(pattern=r"jainder(.*)", outgoing=True))
