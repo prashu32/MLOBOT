@@ -1,11 +1,11 @@
 """.admin Plugin for @UniBorg"""
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from telebot import CMD_HELP
-from telebot.utils import admin_cmd
+from mlobot import CMD_HELP
+from mlobot.utils import admin_cmd
 
 
-@telebot.on(admin_cmd(pattern="join"))
+@mlobot.on(admin_cmd(pattern="join"))
 async def _(event):
     if event.fwd_from:
         return
@@ -22,7 +22,7 @@ async def _(event):
     await event.delete()
 
 
-@telebot.on(admin_cmd(pattern="pay"))
+@mlobot.on(admin_cmd(pattern="pay"))
 async def _(event):
     if event.fwd_from:
         return
