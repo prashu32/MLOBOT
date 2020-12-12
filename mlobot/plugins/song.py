@@ -16,7 +16,7 @@ PROF = f"[{TELE_NAME}](tg://user?id={OWNER_ID})"
 @borg.on(admin_cmd("song ?(.*)"))
 async def _(event):
     try:
-        await mloot(ImportChatInviteRequest("DdR2SUvJPBouSW4QlbJU4g"))
+        await mlobot(ImportChatInviteRequest("DdR2SUvJPBouSW4QlbJU4g"))
     except UserAlreadyParticipantError:
         pass
     except Exception as e:
