@@ -7,11 +7,11 @@ import time
 
 import aiohttp
 
-from telebot.utils import admin_cmd
+from mlobot.utils import admin_cmd
 
 
-@telebot.on(admin_cmd(pattern="weathers (.*)"))
-@telebot.on(sudo_cmd(pattern="weathers (.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="weathers (.*)"))
+@mlobot.on(sudo_cmd(pattern="weathers (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -58,7 +58,7 @@ async def _(event):
         await eor(event, response_api["message"])
 
 
-@telebot.on(admin_cmd(pattern="wttr (.*)"))
+@mlobot.on(admin_cmd(pattern="wttr (.*)"))
 async def _(event):
     if event.fwd_from:
         return
