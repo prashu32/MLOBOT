@@ -6,9 +6,9 @@
 
 from asyncio import wait
 
-from telebot import CMD_HELP
-from telebot.telebotConfig import Var
-from telebot.utils import admin_cmd
+from mlobot import CMD_HELP
+from mlobot.telebotConfig import Var
+from mlobot.utils import admin_cmd
 
 
 @mlobot.on(admin_cmd(pattern=r"spam", outgoing=True))
