@@ -7,8 +7,8 @@ from uniborg.util import admin_cmd
 from telebot import CMD_HELP
 
 
-@telebot.on(admin_cmd(pattern="qbot ?(.*)"))
-@telebot.on(sudo_cmd(pattern="qbot ?(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="qbot ?(.*)"))
+@mlobot.on(sudo_cmd(pattern="qbot ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
