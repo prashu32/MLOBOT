@@ -1,10 +1,10 @@
 """ Weebify a text,
-# For TeleBot
+# For Mlobot Superbot
 By :- @PhycoNinja13b
 Modified by :- @kirito6969
 .weeb <text> """
 
-from telebot.utils import admin_cmd
+from mlobot.utils import admin_cmd
 
 normiefont = [
     "a",
@@ -64,8 +64,8 @@ weebyfont = [
 ]
 
 
-@telebot.on(admin_cmd(pattern="weeb ?(.*)"))
-@telebot.on(sudo_cmd(pattern="weeb ?(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="weeb ?(.*)"))
+@mlobot.on(sudo_cmd(pattern="weeb ?(.*)", allow_sudo=True))
 async def weebify(event):
 
     args = event.pattern_match.group(1)
@@ -73,7 +73,7 @@ async def weebify(event):
         get = await event.get_reply_message()
         args = get.text
     if not args:
-        await eor(event, "`What I am Supposed to Weebify U Dumb`")
+        await eor(event, "`What I am Supposed to Weebify U Dumb Chal hatt`")
         return
     string = "  ".join(args).lower()
     for normiecharacter in string:
