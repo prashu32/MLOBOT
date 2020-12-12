@@ -40,8 +40,8 @@ async def trumptweet(text):
         f"https://nekobot.xyz/api/imagegen?type=trumptweet&text={text}"
     ).json()
     wew = r.get("message")
-    TeleBoturl = url(wew)
-    if not TeleBoturl:
+    mloboturl = url(wew)
+    if not mloboturl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(wew).content)
@@ -70,7 +70,7 @@ async def kannagen(text):
         f"https://nekobot.xyz/api/imagegen?type=kannagen&text={text}"
     ).json()
     wew = r.get("message")
-    TeleBoturl = url(wew)
+    Mloboturl = url(wew)
     if not TeleBoturl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
@@ -110,8 +110,8 @@ async def tweets(text1, text2):
     return "temp.jpg"
 
 
-@telebot.on(admin_cmd(pattern="trump(?: |$)(.*)", outgoing=True))
-@telebot.on(sudo_cmd(pattern="trump(?: |$)(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="trump(?: |$)(.*)", outgoing=True))
+@mlobot.on(sudo_cmd(pattern="trump(?: |$)(.*)", allow_sudo=True))
 async def nekobot(event):
     text = event.pattern_match.group(1)
     reply_to_id = event.message
@@ -141,8 +141,8 @@ async def nekobot(event):
     await event.delete()
 
 
-@telebot.on(admin_cmd(pattern="modi(?: |$)(.*)", outgoing=True))
-@telebot.on(sudo_cmd(pattern="modi(?: |$)(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="modi(?: |$)(.*)", outgoing=True))
+@mlobot.on(sudo_cmd(pattern="modi(?: |$)(.*)", allow_sudo=True))
 async def nekobot(event):
     text = event.pattern_match.group(1)
     reply_to_id = event.message
@@ -172,8 +172,8 @@ async def nekobot(event):
     await event.delete()
 
 
-@telebot.on(admin_cmd(pattern="cmm(?: |$)(.*)", outgoing=True))
-@telebot.on(sudo_cmd(pattern="cmm(?: |$)(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="cmm(?: |$)(.*)", outgoing=True))
+@mlobot.on(sudo_cmd(pattern="cmm(?: |$)(.*)", allow_sudo=True))
 async def nekobot(event):
     text = event.pattern_match.group(1)
     reply_to_id = event.message
@@ -203,8 +203,8 @@ async def nekobot(event):
     await event.delete()
 
 
-@telebot.on(admin_cmd(pattern="kanna(?: |$)(.*)", outgoing=True))
-@telebot.on(sudo_cmd(pattern="kanna(?: |$)(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="kanna(?: |$)(.*)", outgoing=True))
+@mlobot.on(sudo_cmd(pattern="kanna(?: |$)(.*)", allow_sudo=True))
 async def nekobot(event):
     text = event.pattern_match.group(1)
     reply_to_id = event.message
