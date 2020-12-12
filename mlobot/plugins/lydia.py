@@ -33,8 +33,8 @@ async def repcf(event):
         await eor(event, str(e))
 
 
-@telebot.on(admin_cmd(pattern="addcf", outgoing=True))
-@telebot.on(sudo_cmd(pattern="addcf", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="addcf", outgoing=True))
+@mlobot.on(sudo_cmd(pattern="addcf", allow_sudo=True))
 async def addcf(event):
     if event.fwd_from:
         return
@@ -58,8 +58,8 @@ async def addcf(event):
         await eor(event, "Reply to a user to activate Lydia AI on them")
 
 
-@telebot.on(admin_cmd(pattern="remcf", outgoing=True))
-@telebot.on(sudo_cmd(pattern="remcf", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="remcf", outgoing=True))
+@mlobot.on(sudo_cmd(pattern="remcf", allow_sudo=True))
 async def remcf(event):
     if event.fwd_from:
         return
