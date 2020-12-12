@@ -15,8 +15,8 @@ from telebot import CMD_HELP
 from telebot.google_images_download import googleimagesdownload
 
 
-@telebot.on(admin_cmd(pattern="img ?(.*)"))
-@telebot.on(sudo_cmd(pattern="img ?(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="img ?(.*)"))
+@mlobot.on(sudo_cmd(pattern="img ?(.*)", allow_sudo=True))
 async def img_sampler(event):
     await eor(event, "`Processing ...`")
     reply = await event.get_reply_message()
