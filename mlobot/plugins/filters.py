@@ -12,14 +12,14 @@ import re
 from telethon import utils
 from telethon.tl import types
 
-from telebot import CMD_HELP
-from telebot.plugins.sql_helper.filter_sql import (
+from mlobot import CMD_HELP
+from mlobot.plugins.sql_helper.filter_sql import (
     add_filter,
     get_all_filters,
     remove_all_filters,
     remove_filter,
 )
-from telebot.utils import admin_cmd
+from mlobot.utils import admin_cmd
 
 DELETE_TIMEOUT = 0
 TYPE_TEXT = 0
@@ -70,8 +70,8 @@ async def on_snip(event):
                 last_triggered_filters[event.chat_id].remove(name)
 
 
-@telebot.on(admin_cmd(pattern="savefilter (.*)"))
-@telebot.on(sudo_cmd(pattern="savefilter (.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="savefilter (.*)"))
+@mlobot.on(sudo_cmd(pattern="savefilter (.*)", allow_sudo=True))
 async def on_snip_save(event):
     name = event.pattern_match.group(1)
     msg = await event.get_reply_message()
@@ -105,8 +105,8 @@ async def on_snip_save(event):
         )
 
 
-@telebot.on(admin_cmd(pattern="listfilters"))
-@telebot.on(sudo_cmd(pattern="listfilters", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="listfilters"))
+@mlobot.on(sudo_cmd(pattern="listfilters", allow_sudo=True))
 async def on_snip_list(event):
     all_snips = get_all_filters(event.chat_id)
     OUT_STR = "Available Filters in the Current Chat:\n"
@@ -131,16 +131,16 @@ async def on_snip_list(event):
         await eor(event, OUT_STR)
 
 
-@telebot.on(admin_cmd(pattern="clearfilter (.*)"))
-@telebot.on(sudo_cmd(pattern="clearfilter (.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="clearfilter (.*)"))
+@mlobot.on(sudo_cmd(pattern="clearfilter (.*)", allow_sudo=True))
 async def on_snip_delete(event):
     name = event.pattern_match.group(1)
     remove_filter(event.chat_id, name)
     await eor(event, f"filter {name} deleted successfully")
 
 
-@telebot.on(admin_cmd(pattern="clearallfilters"))
-@telebot.on(sudo_cmd(pattern="clearallfilters", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="clearallfilters"))
+@mlobot.on(sudo_cmd(pattern="clearallfilters", allow_sudo=True))
 async def on_all_snip_delete(event):
     remove_all_filters(event.chat_id)
     await eor(event, f"filters **in current chat** deleted successfully")
