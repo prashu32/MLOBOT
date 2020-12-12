@@ -54,7 +54,7 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@TeleBotSupport"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@mlo_userbot"
 
 
 @mlobot.on(admin_cmd(outgoing=True, pattern="alive"))
@@ -72,10 +72,10 @@ async def amireallyalive(alive):
         tele += (
             f"{telemoji} **Telethon version**: `1.17`\n{telemoji} **Python**: `3.8.3`\n"
         )
-        tele += f"{telemoji} **TeleBot Version**: `{telever}`\n"
+        tele += f"{telemoji} **MloBot Version**: `{telever}`\n"
         tele += f"{telemoji} **More Info**: @Mlo_Userbot\n"
         tele += f"{telemoji} **Sudo** : `{sudo}`\n"
-        tele += f"{telemoji} **TeleBot Uptime**: `{uptime}`\n"
+        tele += f"{telemoji} **MloBot Uptime**: `{uptime}`\n"
         tele += f"{telemoji} **Database Status**: `All OK Saar👌!`\n"
         tele += (
             f"{telemoji} **My King** : [{DEFAULTUSER}](tg://user?id={myid})\n\n"
@@ -101,10 +101,10 @@ async def amireallyalive(alive):
             f"**Welcøme Tø Mløbøt  **\n\n"
             f"`{CUSTOM_ALIVE}`\n\n"
             f"{telemoji} **Telethon version**: `1.17`\n{telemoji} **Python**: `3.8.3`\n"
-            f"{telemoji} **TeleBot Version**: `{telever}`\n"
-            f"{telemoji} **More Info**: @TeleBotSupport\n"
+            f"{telemoji} **MloBot Version**: `{telever}`\n"
+            f"{telemoji} **More Info**: @Mlo_userbot\n"
             f"{telemoji} **Sudo** : `{sudo}`\n"
-            f"{telemoji} **TeleBot Uptime**: `{uptime}`\n"
+            f"{telemoji} **MloBot Uptime**: `{uptime}`\n"
             f"{telemoji} **Database Status**: `All OK saar👌!`\n"
             f"{telemoji} **My King** : [{DEFAULTUSER}](tg://user?id={myid})\n\n"
             "    [✨ GitHub Repository ✨](https://github.com/prashu32/Mlobot)",
