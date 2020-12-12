@@ -1,13 +1,13 @@
 from telethon import events
 from telethon.utils import pack_bot_file_id
 
-from telebot.plugins.sql_helper.welcome_sql import (
+from mlobot.plugins.sql_helper.welcome_sql import (
     add_welcome_setting,
     get_current_welcome_settings,
     rm_welcome_setting,
     update_previous_welcome,
 )
-from telebot.utils import admin_cmd
+from mlobot.utils import admin_cmd
 
 
 @bot.on(events.ChatAction())  # pylint:disable=E0602
@@ -64,8 +64,8 @@ async def _(event):
             update_previous_welcome(event.chat_id, current_message.id)
 
 
-@telebot.on(admin_cmd(pattern="savewelcome"))  # pylint:disable=E0602
-@telebot.on(sudo_cmd(pattern="savewelcome", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="savewelcome"))  # pylint:disable=E0602
+@mlobot.on(sudo_cmd(pattern="savewelcome", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -80,8 +80,8 @@ async def _(event):
         await eor(event, "Welcome note saved. ")
 
 
-@telebot.on(admin_cmd(pattern="clearwelcome"))  # pylint:disable=E0602
-@telebot.on(sudo_cmd(pattern="clearwelcome", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="clearwelcome"))  # pylint:disable=E0602
+@mlobot.on(sudo_cmd(pattern="clearwelcome", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -94,8 +94,8 @@ async def _(event):
     )
 
 
-@telebot.on(admin_cmd(pattern="listwelcome"))  # pylint:disable=E0602
-@telebot.on(sudo_cmd(pattern="listwelcome", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="listwelcome"))  # pylint:disable=E0602
+@mlobot.on(sudo_cmd(pattern="listwelcome", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
