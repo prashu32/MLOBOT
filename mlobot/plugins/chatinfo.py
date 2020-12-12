@@ -19,12 +19,12 @@ from telethon.tl.functions.messages import GetFullChatRequest, GetHistoryRequest
 from telethon.tl.types import ChannelParticipantsAdmins, MessageActionChannelMigrateFrom
 from telethon.utils import get_input_location
 
-from telebot import CMD_HELP
-from telebot.utils import admin_cmd, sudo_cmd
+from mlobot import CMD_HELP
+from mlobot.utils import admin_cmd, sudo_cmd
 
 
-@telebot.on(admin_cmd(pattern="chatinfo(?: |$)(.*)", outgoing=True))
-@telebot.on(sudo_cmd(pattern="chatinfo(?: |$)(.*)"))
+@mlobot.on(admin_cmd(pattern="chatinfo(?: |$)(.*)", outgoing=True))
+@mlobot.on(sudo_cmd(pattern="chatinfo(?: |$)(.*)"))
 async def info(event):
     ok = await eor(event, "`Analysing the chat...`")
     chat = await get_chatinfo(event)
