@@ -21,8 +21,8 @@ from hachoir.parser import createParser
 from pySmartDL import SmartDL
 from telethon.tl.types import DocumentAttributeVideo
 
-from telebot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
-from telebot.utils import admin_cmd
+from mlobot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
+from mlobot.utils import admin_cmd
 
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):
@@ -84,8 +84,8 @@ def time_formatter(milliseconds: int) -> str:
     return tmp[:-2]
 
 
-@telebot.on(admin_cmd(pattern=r"dl(?: |)(.*)", outgoing=True))
-@telebot.on(sudo_cmd(pattern=r"dl(?: |)(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern=r"dl(?: |)(.*)", outgoing=True))
+@mlobot.on(sudo_cmd(pattern=r"dl(?: |)(.*)", allow_sudo=True))
 async def download(target_file):
     """ For .dl command, download files to the userbot's server. """
     await eor(target_file, "Processing ...")
@@ -163,8 +163,8 @@ async def download(target_file):
         await eor(target_file, "Reply to a message to download to my local server.")
 
 
-@telebot.on(admin_cmd(pattern=r"uploadir (.*)", outgoing=True))
-@telebot.on(sudo_cmd(pattern=r"uploadir (.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern=r"uploadir (.*)", outgoing=True))
+@mlobot.on(sudo_cmd(pattern=r"uploadir (.*)", allow_sudo=True))
 async def uploadir(udir_event):
     """ For .uploadir command, allows you to upload everything from a folder in the server"""
     input_str = udir_event.pattern_match.group(1)
@@ -246,8 +246,8 @@ async def uploadir(udir_event):
         await eor(udir_event, "404: Directory Not Found")
 
 
-@telebot.on(admin_cmd(pattern=r"ul (.*)", outgoing=True))
-@telebot.on(sudo_cmd(pattern=r"ul (.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern=r"ul (.*)", outgoing=True))
+@mlobot.on(sudo_cmd(pattern=r"ul (.*)", allow_sudo=True))
 async def upload(u_event):
     """ For .ul command, allows you to upload a file from the userbot's server """
     await eor(u_event, "Processing ...")
@@ -323,8 +323,8 @@ def extract_w_h(file):
         return width, height
 
 
-@telebot.on(admin_cmd(pattern=r"uploadas(stream|vn|all) (.*)", outgoing=True))
-@telebot.on(sudo_cmd(pattern=r"uploadas(stream|vn|all) (.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern=r"uploadas(stream|vn|all) (.*)", outgoing=True))
+@mlobot.on(sudo_cmd(pattern=r"uploadas(stream|vn|all) (.*)", allow_sudo=True))
 async def uploadas(uas_event):
     """ For .uploadas command, allows you to specify some arguments for upload. """
     await eor(uas_event, "Processing ...")
