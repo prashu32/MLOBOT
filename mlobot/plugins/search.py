@@ -1,7 +1,7 @@
 """
 UserBot Module to search the internet
-All-in-one by @its_xditya
-(c)TeleBot
+All-in-one by @mbbs_lover
+(c)mlobot
 
 Available commands:
 .ggl - howtogoogle
@@ -18,10 +18,10 @@ from telebot import CMD_HELP
 from telebot.utils import admin_cmd
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern=r"gs (.*)"))
-@telebot.on(sudo_cmd(allow_sudo=True, pattern=r"gs (.*)"))
+@mlobot.on(admin_cmd(outgoing=True, pattern=r"gs (.*)"))
+@mlobot.on(sudo_cmd(allow_sudo=True, pattern=r"gs (.*)"))
 async def gsearch(q_event):
-    """ For .google command, do a Google search from @TeleBotHelp. """
+    """ For .google command, do a Google search from @Spamreporterr. """
     match = q_event.pattern_match.group(1)
     page = findall(r"page=\d+", match)
     try:
@@ -49,8 +49,8 @@ async def gsearch(q_event):
     )
 
 
-@telebot.on(admin_cmd("duckduckgo (.*)"))
-@telebot.on(sudo_cmd("duckduckgo (.*)", allow_sudo=True))
+@mlobot.on(admin_cmd("duckduckgo (.*)"))
+@mlobot.on(sudo_cmd("duckduckgo (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -66,8 +66,8 @@ async def _(event):
         await eor(event, "something is wrong. please try again later.")
 
 
-@telebot.on(admin_cmd(pattern="ggl (.*)"))
-@telebot.on(sudo_cmd(pattern="ggl (.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="ggl (.*)"))
+@mlobot.on(sudo_cmd(pattern="ggl (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
