@@ -1,4 +1,4 @@
-# TeleBot
+# MloBot Userbot
 
 # Copyright (C) 2020 Adek Maulana.
 # All rights reserved.
@@ -13,13 +13,13 @@ import os
 import heroku3
 import requests
 
-from telebot import CMD_HELP, CMD_HNDLR
+from mlobot import CMD_HELP, CMD_HNDLR
 
 Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 
 
-@telebot.on(admin_cmd(pattern=r"(set|get|del) var (.*)", outgoing=True))
+@mlobot.on(admin_cmd(pattern=r"(set|get|del) var (.*)", outgoing=True))
 async def variable(var):
     """
     Manage most of ConfigVars setting, set new var, get current var,
@@ -98,8 +98,8 @@ async def variable(var):
             return await toput.edit(f"`{variable}`** doesn't exist**")
 
 
-@telebot.on(admin_cmd(pattern="usage"))
-@telebot.on(sudo_cmd(pattern="usage", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="usage"))
+@mlobot.on(sudo_cmd(pattern="usage", allow_sudo=True))
 async def dyno_usage(dyno):
     """
     Get your account Dyno Usage
@@ -157,8 +157,8 @@ async def dyno_usage(dyno):
     )
 
 
-@telebot.on(admin_cmd(pattern="info heroku"))
-@telebot.on(sudo_cmd(pattern="info heroku", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="info heroku"))
+@mlobot.on(sudo_cmd(pattern="info heroku", allow_sudo=True))
 async def info(event):
     await borg.send_message(
         event.chat_id,
@@ -181,8 +181,8 @@ def prettyjson(obj, indent=2, maxlinelength=80):
     return indentitems(items, indent, level=0)
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern=r"logs"))
-@telebot.on(sudo_cmd(allow_sudo=True, pattern=r"logs"))
+@mlobot.on(admin_cmd(outgoing=True, pattern=r"logs"))
+@mlobot.on(sudo_cmd(allow_sudo=True, pattern=r"logs"))
 async def _(givelogs):
     try:
         Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
@@ -193,7 +193,7 @@ async def _(givelogs):
             " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku var !",
         )
     await eor(givelogs, "Downloading Logs..")
-    with open("logs-telebot.txt", "w") as log:
+    with open("logs-mlobot.txt", "w") as log:
         log.write(app.get_log())
     ok = app.get_log()
     message = ok
@@ -202,9 +202,9 @@ async def _(givelogs):
     url = f"https://del.dog/{r['key']}"
     await givelogs.client.send_file(
         givelogs.chat_id,
-        "logs-telebot.txt",
+        "logs-mlobot.txt",
         reply_to=givelogs.id,
-        caption=f"**Heroku** TeleBot Logs.\nPasted [here]({url}) too!",
+        caption=f"**Heroku** MloBot Logs.\nPasted [here]({url}) too!",
     )
     await eor(givelogs, "Heroku Logs Incoming!!")
     await asyncio.sleep(5)
