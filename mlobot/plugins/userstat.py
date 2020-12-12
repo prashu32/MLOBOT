@@ -1,5 +1,5 @@
-#    TeleBot - UserBot
-#    Copyright (C) 2020 TeleBot
+#    MloBot - UserBot
+#    Copyright (C) 2020 MloBot
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -24,8 +24,8 @@ from telethon.tl.functions.users import GetFullUserRequest
 swapi = os.environ.get("SPAMWATCH_API_KEY", None)
 
 
-@telebot.on(admin_cmd(pattern=f"ustat(?: |$)(.*)"))
-@telebot.on(sudo_cmd(pattern=f"ustat(?: |$)(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern=f"ustat(?: |$)(.*)"))
+@mlobot.on(sudo_cmd(pattern=f"ustat(?: |$)(.*)", allow_sudo=True))
 async def _(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
