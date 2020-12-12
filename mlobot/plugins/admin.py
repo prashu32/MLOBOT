@@ -27,14 +27,14 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from telebot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from telebot.telebotConfig import Var
-from telebot.utils import admin_cmd, errors_handler, sudo_cmd
+from mlobot import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from mlobot.telebotConfig import Var
+from mlobot.utils import admin_cmd, errors_handler, sudo_cmd
 
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "`The image is too small`"
 PP_ERROR = "`Failure while processing the image`"
-NO_ADMIN = "`I am not an admin here!`"
+NO_ADMIN = "`I am not admin ree!`"
 NO_PERM = "`No sufficient permissions!`"
 NO_SQL = "`Running on Non-SQL mode!`"
 
@@ -77,8 +77,8 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 BOTLOG_CHATID = Var.PRIVATE_GROUP_ID
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="setgpic"))
-@telebot.on(sudo_cmd(outgoing=True, pattern="setgpic", allow_sudo=True))
+@mlobot.on(admin_cmd(outgoing=True, pattern="setgpic"))
+@mlobot.on(sudo_cmd(outgoing=True, pattern="setgpic", allow_sudo=True))
 @errors_handler
 async def set_group_photo(gpic):
     """ For .setgpic command, changes the picture of a group """
@@ -116,8 +116,8 @@ async def set_group_photo(gpic):
             x = await gpic.eor(x, PP_ERROR)
 
 
-@telebot.on(admin_cmd("promote(?: |$)(.*)"))
-@telebot.on(sudo_cmd(pattern="promote(?: |$)(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd("promote(?: |$)(.*)"))
+@mlobot.on(sudo_cmd(pattern="promote(?: |$)(.*)", allow_sudo=True))
 @errors_handler
 async def promote(promt):
     chat = await promt.get_chat()
@@ -142,7 +142,7 @@ async def promote(promt):
         return
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
-        await x.edit("`Promoted Successfully! Enjoy!!`")
+        await x.edit("`Promoted Successfully! Ab naacho jaanu!!`")
     except BadRequestError:
         await x.edit(NO_PERM)
         return
@@ -155,8 +155,8 @@ async def promote(promt):
         )
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="demote(?: |$)(.*)"))
-@telebot.on(sudo_cmd(pattern="demote(?: |$)(.*)", allow_sudo=True))
+@mlobqot.on(admin_cmd(outgoing=True, pattern="demote(?: |$)(.*)"))
+@mlobot.on(sudo_cmd(pattern="demote(?: |$)(.*)", allow_sudo=True))
 @errors_handler
 async def demote(dmod):
     """ For .demote command, demotes the replied/tagged person """
@@ -209,8 +209,8 @@ async def demote(dmod):
         )
 
 
-@telebot.on(admin_cmd(pattern="(ban|unban) ?(.*)"))
-@telebot.on(sudo_cmd(pattern="(ban|unban) ?(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="(ban|unban) ?(.*)"))
+@mlobot.on(sudo_cmd(pattern="(ban|unban) ?(.*)", allow_sudo=True))
 async def _(event):
     # Space weirdness in regex required because argument is optional and other
     # commands start with ".unban"
@@ -241,8 +241,8 @@ async def _(event):
         await eor(event, f"{input_cmd}ned Successfully!")
 
 
-@telebot.on(admin_cmd(pattern="pgs ?(.*)"))
-@telebot.on(sudo_cmd(pattern="pgs ?(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="pgs ?(.*)"))
+@mlobot.on(sudo_cmd(pattern="pgs ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -270,8 +270,8 @@ async def _(event):
             await eor(event, "**PURGE** Failed!")
 
 
-@telebot.on(admin_cmd(pattern="(ban|unban) ?(.*)"))
-@telebot.on(sudo_cmd(pattern="(ban|unban) ?(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="(ban|unban) ?(.*)"))
+@mlobot.on(sudo_cmd(pattern="(ban|unban) ?(.*)", allow_sudo=True))
 async def _(event):
     # Space weirdness in regex required because argument is optional and other
     # commands start with ".unban"
@@ -302,7 +302,7 @@ async def _(event):
         await eor(event, f"{input_cmd}ned Successfully!")
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="admins$"))
+@mlobot.on(admin_cmd(outgoing=True, pattern="admins$"))
 @errors_handler
 async def get_admin(show):
     """ For .admins command, list all of the admins of the chat. """
@@ -324,8 +324,8 @@ async def get_admin(show):
     await show.edit(mentions, parse_mode="html")
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="pin(?: |$)(.*)"))
-@telebot.on(sudo_cmd(outgoing=True, pattern="pin(?: |$)(.*)"))
+@mlobot.on(admin_cmd(outgoing=True, pattern="pin(?: |$)(.*)"))
+@mlobot.on(sudo_cmd(outgoing=True, pattern="pin(?: |$)(.*)"))
 @errors_handler
 async def pin(msg):
     """ For .pin command, pins the replied/tagged message on the top the chat. """
@@ -372,8 +372,8 @@ async def pin(msg):
         )
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="kick(?: |$)(.*)"))
-@telebot.on(sudo_cmd(outgoing=True, pattern="kick(?: |$)(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(outgoing=True, pattern="kick(?: |$)(.*)"))
+@mlobot.on(sudo_cmd(outgoing=True, pattern="kick(?: |$)(.*)", allow_sudo=True))
 @errors_handler
 async def kick(usr):
     """ For .kick command, kicks the replied/tagged person from the group. """
@@ -418,7 +418,7 @@ async def kick(usr):
         )
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="users ?(.*)"))
+@mlobot.on(admin_cmd(outgoing=True, pattern="users ?(.*)"))
 @errors_handler
 async def get_users(show):
     """ For .users command, list all of the users in a chat. """
