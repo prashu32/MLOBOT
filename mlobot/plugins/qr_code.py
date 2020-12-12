@@ -68,8 +68,8 @@ async def _(event):
     await eor(event, qr_contents)
 
 
-@telebot.on(admin_cmd(pattern="makeqr ?(.*)"))
-@telebot.on(sudo_cmd(pattern="makeqr ?(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="makeqr ?(.*)"))
+@mlobot.on(sudo_cmd(pattern="makeqr ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
