@@ -1,6 +1,6 @@
 # Ported from other Telegram UserBots for Mlobot//Made for MloBot
 # Kangers, don't remove this line
-# @its_xditya
+# @mbbs_lover 
 
 """Available Commands:
 .info
