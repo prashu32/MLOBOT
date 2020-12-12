@@ -2,12 +2,12 @@
 Syntax: .cpin [LOUD]"""
 from telethon.tl import functions
 
-from telebot import CMD_HELP
-from telebot.utils import admin_cmd
+from mlobot import CMD_HELP
+from mlobot.utils import admin_cmd
 
 
-@telebot.on(admin_cmd(pattern="cpin ?(.*)"))
-@telebot.on(sudo_cmd(pattern="cpin ?(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="cpin ?(.*)"))
+@mlobot.on(sudo_cmd(pattern="cpin ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
