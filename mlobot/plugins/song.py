@@ -1,14 +1,14 @@
 """
 Music scrapper - Scrapps of SMD Database
 """
-# Better now - @its_xditya
+# Better now - @Mbbs_lover
 # Based off plugin by @okay_retard && @hellboi_atul
 
 from telethon.errors.rpcerrorlist import UserAlreadyParticipantError
 from telethon.tl.functions.messages import ImportChatInviteRequest
 from telethon.tl.types import InputMessagesFilterMusic
 
-from telebot.plugins import OWNER_ID, TELE_NAME
+from mlobot.plugins import OWNER_ID, TELE_NAME
 
 PROF = f"[{TELE_NAME}](tg://user?id={OWNER_ID})"
 
@@ -38,7 +38,7 @@ async def _(event):
 ⫸ **Uploaded by** {}
 """
     try:
-        async for event in telebot.iter_messages(
+        async for event in mlobot.iter_messages(
             chat, search=name, limit=1, filter=InputMessagesFilterMusic
         ):
             ok = cap.format(event.message, PROF)
