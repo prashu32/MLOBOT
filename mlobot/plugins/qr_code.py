@@ -19,8 +19,8 @@ def progress(current, total):
     )
 
 
-@telebot.on(admin_cmd(pattern="getqr"))
-@telebot.on(sudo_cmd(pattern="getqr", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="getqr"))
+@mlobot.on(sudo_cmd(pattern="getqr", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
