@@ -1,6 +1,6 @@
-# Ported from other Telegram UserBots for TeleBot//Made for TeleBot
-# Kangers, don't remove this line
-# @its_xditya
+# Ported from other Telegram UserBots for Mlobot//Made for MLOBOT
+# Kangers, don't remove this line ok
+# @mbbs_lover
 
 """COMMAND : .pbio, .ppic, .pname, .delpfp {n}"""
 
@@ -10,10 +10,10 @@ from telethon.tl import functions
 from telethon.tl.functions.photos import DeletePhotosRequest, GetUserPhotosRequest
 from telethon.tl.types import InputPhoto
 
-from telebot import CMD_HELP
+from mlobot import CMD_HELP
 
 
-@telebot.on(admin_cmd(pattern="pbio (.*)"))  # pylint:disable=E0602
+@mlobot.on(admin_cmd(pattern="pbio (.*)"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -27,7 +27,7 @@ async def _(event):
         await event.edit(str(e))
 
 
-@telebot.on(admin_cmd(pattern="pname ((.|\n)*)"))  # pylint:disable=E0602,W0703
+@mlobot.on(admin_cmd(pattern="pname ((.|\n)*)"))  # pylint:disable=E0602,W0703
 async def _(event):
     if event.fwd_from:
         return
@@ -47,7 +47,7 @@ async def _(event):
         await event.edit(str(e))
 
 
-@telebot.on(admin_cmd(pattern="ppic"))  # pylint:disable=E0602
+@mlobot.on(admin_cmd(pattern="ppic"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -82,7 +82,7 @@ async def _(event):
         logger.warn(str(e))  # pylint:disable=E0602
 
 
-@telebot.on(admin_cmd(pattern="delpfp ?(.*)"))
+@mlobot.on(admin_cmd(pattern="delpfp ?(.*)"))
 async def remove_profilepic(delpfp):
     """ For .delpfp command, delete your current profile picture in Telegram. """
     group = delpfp.text[8:]
