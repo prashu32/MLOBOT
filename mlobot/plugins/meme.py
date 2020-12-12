@@ -6,12 +6,12 @@ By : - @Zero_cool7870
 """
 import asyncio
 
-from telebot import CMD_HELP
-from telebot.utils import admin_cmd
+from mlobot import CMD_HELP
+from mlobot.utils import admin_cmd
 
 
-@telebot.on(admin_cmd(pattern=r"meme", outgoing=True))
-@telebot.on(sudo_cmd(pattern=r"meme", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern=r"meme", outgoing=True))
+@mlobot.on(sudo_cmd(pattern=r"meme", allow_sudo=True))
 async def meme(event):
     if event.fwd_from:
         return
@@ -44,8 +44,8 @@ usage:- .flower
 """
 
 
-@telebot.on(admin_cmd(pattern=r"flower", outgoing=True))
-@telebot.on(sudo_cmd(pattern=r"flower", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern=r"flower", outgoing=True))
+@mlobot.on(sudo_cmd(pattern=r"flower", allow_sudo=True))
 async def meme(event):
     if event.fwd_from:
         return
