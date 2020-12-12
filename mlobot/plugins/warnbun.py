@@ -1,11 +1,11 @@
 """.admin Plugin for @UniBorg"""
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from telebot.utils import admin_cmd
+from mlobot.utils import admin_cmd
 
 
-@telebot.on(admin_cmd(pattern="warn1"))
-@telebot.on(sudo_cmd(pattern="warn1", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="warn1"))
+@mlobot.on(sudo_cmd(pattern="warn1", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -27,8 +27,8 @@ async def _(event):
 """.admin Plugin for @UniBorg"""
 
 
-@telebot.on(admin_cmd(pattern="warn2"))
-@telebot.on(sudo_cmd(pattern="warn2", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="warn2"))
+@mlobot.on(sudo_cmd(pattern="warn2", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -48,8 +48,8 @@ async def _(event):
 """.admin Plugin for @UniBorg"""
 
 
-@telebot.on(admin_cmd(pattern="warn3"))
-@telebot.on(admin_cmd(pattern="warn3", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="warn3"))
+@mlobot.on(admin_cmd(pattern="warn3", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -71,8 +71,8 @@ async def _(event):
 """.admin Plugin for @UniBorg"""
 
 
-@telebot.on(admin_cmd(pattern="warn0"))
-@telebot.on(admin_cmd(pattern="warn0", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="warn0"))
+@mlobot.on(admin_cmd(pattern="warn0", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -89,8 +89,8 @@ async def _(event):
     await event.delete()
 
 
-@telebot.on(admin_cmd(pattern="ocb"))
-@telebot.on(sudo_cmd(pattern="ocb", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="ocb"))
+@mlobot.on(sudo_cmd(pattern="ocb", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -107,7 +107,7 @@ async def _(event):
     await event.delete()
 
 
-@telebot.on(admin_cmd(pattern="fw"))
+@mlobot.on(admin_cmd(pattern="fw"))
 async def _(event):
     if event.fwd_from:
         return
