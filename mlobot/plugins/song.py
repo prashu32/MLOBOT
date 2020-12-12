@@ -16,7 +16,7 @@ PROF = f"[{TELE_NAME}](tg://user?id={OWNER_ID})"
 @borg.on(admin_cmd("song ?(.*)"))
 async def _(event):
     try:
-        await telebot(ImportChatInviteRequest("DdR2SUvJPBouSW4QlbJU4g"))
+        await mloot(ImportChatInviteRequest("DdR2SUvJPBouSW4QlbJU4g"))
     except UserAlreadyParticipantError:
         pass
     except Exception as e:
@@ -42,8 +42,8 @@ async def _(event):
             chat, search=name, limit=1, filter=InputMessagesFilterMusic
         ):
             ok = cap.format(event.message, PROF)
-            await telebot.delete_messages(current_chat, current_msg)
-            await telebot.send_file(current_chat, event, caption=ok)
+            await mlobot.delete_messages(current_chat, current_msg)
+            await mlobot.send_file(current_chat, event, caption=ok)
     except BaseException:
         await event.reply(
             f"`Song, {name}, not found. For better results, use Artist Name -Song Name.`"
