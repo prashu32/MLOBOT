@@ -12,7 +12,7 @@ from telethon.tl.types import MessageEntityMentionName
 from .. import ALIVE_NAME, CMD_HELP
 from ..utils import admin_cmd
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "mlobot"
 DEFAULTUSERBIO = "404: No bio found!"
 if Var.PRIVATE_GROUP_ID is None:
     BOTLOG = False
