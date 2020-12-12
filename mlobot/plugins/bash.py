@@ -2,12 +2,12 @@ import asyncio
 import io
 import time
 
-from telebot import CMD_HELP
-from telebot.utils import admin_cmd
+from mlobot import CMD_HELP
+from mlobot.utils import admin_cmd
 
 
-@telebot.on(admin_cmd(pattern="bash ?(.*)"))
-@telebot.on(sudo_cmd(pattern="bash ?(.*)", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern="bash ?(.*)"))
+@mlobot.on(sudo_cmd(pattern="bash ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
