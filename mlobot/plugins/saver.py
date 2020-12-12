@@ -1,5 +1,5 @@
-#    TeleBot - UserBot
-#    Copyright (C) 2020 TeleBot
+#    Mlobot - UserBot
+#    Copyright (C) 2020 Mlobot
 
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -21,9 +21,9 @@ from asyncio import sleep
 
 from telethon import events
 
-from telebot import CMD_HELP
-from telebot.telebotConfig import Var
-from telebot.utils import admin_cmd
+from mlobot import CMD_HELP
+from mlobot.mlobotConfig import Var
+from mlobot.utils import admin_cmd
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.WARN
@@ -35,8 +35,8 @@ BOTLOG = True
 BOTLOG_CHATID = Var.PRIVATE_GROUP_ID
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern=r"save(?: |$)([\s\S]*)"))
-@telebot.on(sudo_cmd(allow_sudo=True, pattern=r"save(?: |$)([\s\S]*)"))
+@mlobot.on(admin_cmd(outgoing=True, pattern=r"save(?: |$)([\s\S]*)"))
+@mlobot.on(sudo_cmd(allow_sudo=True, pattern=r"save(?: |$)([\s\S]*)"))
 async def log(log_text):
     """ For .log command, forwards a message or the command argument to the bot logs group """
     if BOTLOG:
@@ -59,7 +59,7 @@ async def log(log_text):
     await log_text.delete()
 
 
-@telebot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
+@mlobot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
 async def monito_p_m_s(event):
     sender = await event.get_sender()
     if Config.NC_LOG_P_M_S and not sender.bot:
