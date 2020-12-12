@@ -320,7 +320,6 @@ async def custom(event):
           )  # pylint: disable=oof
 async def enablee(event):
     if event.sender_id == OWNER_ID:
-        t
 Mlobot = "LOAD_MYBOT"
         if Var.HEROKU_APP_NAME is not None:
             app = Heroku.app(Var.HEROKU_APP_NAME)
