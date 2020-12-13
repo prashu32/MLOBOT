@@ -17,8 +17,8 @@ from urllib.error import HTTPError
 import requests
 from pySmartDL import SmartDL
 
-from telebot import CMD_HELP, LOGS
-from telebot.utils import admin_cmd, humanbytes, time_formatter
+from mlobot import CMD_HELP, LOGS
+from mlobot.utils import admin_cmd, humanbytes, time_formatter
 
 
 async def download_file_from_google_drive(id):
@@ -94,8 +94,8 @@ async def get_file_name(content):
     return file_name
 
 
-@telebot.on(admin_cmd(pattern=f"gdl", outgoing=True))
-@telebot.on(sudo_cmd(pattern=f"gdl", allow_sudo=True))
+@mlobot.on(admin_cmd(pattern=f"gdl", outgoing=True))
+@mlobot.on(sudo_cmd(pattern=f"gdl", allow_sudo=True))
 async def g_download(event):
     if event.fwd_from:
         return
@@ -146,7 +146,7 @@ async def subprocess_run(megadl, cmd):
     return stdout.decode().strip(), stderr.decode().strip(), exitCode
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern=r"mega(?: |$)(.*)"))
+@mlobot.on(admin_cmd(outgoing=True, pattern=r"mega(?: |$)(.*)"))
 async def mega_downloader(megadl):
     await megadl.edit("`Collecting information...`")
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
