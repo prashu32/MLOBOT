@@ -94,7 +94,7 @@ async def you_dm_niqq(event):
                     pass
 
 
-@telebot.on(admin_cmd(pattern="block ?(.*)"))
+@mlobot.on(admin_cmd(pattern="block ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -140,7 +140,7 @@ async def approve_p_m(event):
                 )
 
 
-@telebot.on(admin_cmd(pattern="listapproved"))
+@mlobot.on(admin_cmd(pattern="listapproved"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -162,7 +162,7 @@ async def approve_p_m(event):
                 out_file,
                 force_document=True,
                 allow_cache=False,
-                caption="[TeleBot]Current Approved PMs",
+                caption="[MloBot]Current Approved PMs",
                 reply_to=event,
             )
             await event.delete()
