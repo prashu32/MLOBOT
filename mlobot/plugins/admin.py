@@ -155,7 +155,7 @@ async def promote(promt):
         )
 
 
-@mlobqot.on(admin_cmd(outgoing=True, pattern="demote(?: |$)(.*)"))
+@mlobot.on(admin_cmd(outgoing=True, pattern="demote(?: |$)(.*)"))
 @mlobot.on(sudo_cmd(pattern="demote(?: |$)(.*)", allow_sudo=True))
 @errors_handler
 async def demote(dmod):
