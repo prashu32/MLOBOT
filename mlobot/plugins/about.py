@@ -19,7 +19,7 @@ async def _(event):
     animation_interval = 0.1
     animation_ttl = range(0, 36)
     # input_str = event.pattern_match.group(1)
-    # if input_str == "Visit this page to know more about TeleBot.":
+    # if input_str == "Visit this page to know more about mlobot.":
     await eor(event, "Thanks")
     animation_chars = ["**Mlobot**"
 
