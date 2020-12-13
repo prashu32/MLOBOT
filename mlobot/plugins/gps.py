@@ -10,8 +10,8 @@ credits :@mrconfused
 from geopy.geocoders import Nominatim
 from telethon.tl import types
 
-from telebot import CMD_HELP
-from telebot.utils import admin_cmd
+from mlobot import CMD_HELP
+from mlobot.utils import admin_cmd
 
 
 @mlobot.on(admin_cmd(pattern="gps ?(.*)"))
@@ -29,7 +29,7 @@ async def gps(event):
 
     await eor(event, "Finding...")
 
-    geolocator = Nominatim(user_agent="telebot")
+    geolocator = Nominatim(user_agent="mlobot")
     geoloc = geolocator.geocode(input_str)
 
     if geoloc:
