@@ -23,7 +23,7 @@ async def _(event):
         await eor(event, "```Reply to actual users message.```")
         return
     await eor(event, "```Wait making ASCII...```")
-    # For TeleBot
+    # For mlobot
     async with borg.conversation(chat) as conv:
         try:
             response = conv.wait_event(
