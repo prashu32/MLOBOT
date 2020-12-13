@@ -58,7 +58,7 @@ async def teletweet(mlobot):
             return
     sticcers = await bot.inline_query("TwitterStatusBot", f"{(deEmojify(what))}")
     await sticcers[0].click(
-        telebot.chat_id,
+        mlobot.chat_id,
         reply_to=mlobot.reply_to_msg_id,
         silent=True if mlobot.is_reply else False,
         hide_via=True,
