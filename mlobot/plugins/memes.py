@@ -11,7 +11,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
 from mlobot import CMD_HELP
-from mlobot.telebotConfig import Var
+from mlobot.mlobotConfig import Var
 from mlobot.utils import admin_cmd, register
 
 # ================= CONSTANT =================
