@@ -320,7 +320,7 @@ async def custom(event):
           )  # pylint: disable=oof
 async def enablee(event):
     if event.sender_id == OWNER_ID:
-Mlobot = "LOAD_MYBOT"
+mlobot = "LOAD_MYBOT"
         if Var.HEROKU_APP_NAME is not None:
             app = Heroku.app(Var.HEROKU_APP_NAME)
         else:
@@ -339,7 +339,7 @@ Mlobot = "LOAD_MYBOT"
           )  # pylint: disable=oof
 async def dissable(event):
     if event.sender_id == OWNER_ID:
-        telebot = "LOAD_MYBOT"
+        mlobot = "LOAD_MYBOT"
         if Var.HEROKU_APP_NAME is not None:
             app = Heroku.app(Var.HEROKU_APP_NAME)
         else:
@@ -546,7 +546,7 @@ async def alv_pic(event):
                 os.remove(media)
             except BaseException:
                 return await conv.send_message("Error!")
-        Mlobot="PMPERMIT_PIC"
+        mlobot="PMPERMIT_PIC"
         if Var.HEROKU_APP_NAME is not None:
             app=Heroku.app(Var.HEROKU_APP_NAME)
         else:
