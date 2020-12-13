@@ -28,7 +28,7 @@ from telethon.tl.types import (
 )
 
 from mlobot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from mlobot.telebotConfig import Var
+from mlobot.mlobotConfig import Var
 from mlobot.utils import admin_cmd, errors_handler, sudo_cmd
 
 # =================== CONSTANT ===================
