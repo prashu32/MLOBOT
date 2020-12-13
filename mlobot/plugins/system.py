@@ -6,14 +6,14 @@ from asyncio.subprocess import PIPE as asyncPIPE
 from os import remove
 from shutil import which
 
-from telebot import ALIVE_NAME, CMD_HELP, telever
+from mlobot import ALIVE_NAME, CMD_HELP, telever
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "mlobot"
 # ============================================
 
 
-@mloot.on(admin_cmd(pattern="sysd"))
+@mlobot.on(admin_cmd(pattern="sysd"))
 async def sysdetails(sysd):
     """ For .sysd command, get system info using neofetch. """
     if not sysd.text[0].isalpha() and sysd.text[0] not in ("/", "#", "@", "!"):
