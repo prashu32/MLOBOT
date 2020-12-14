@@ -184,7 +184,7 @@ async def settings(event):
                          [(Button.url("Repository", url="https://github.com/prashu32/Mlobot")),
                           (Button.url("Deploy", url="https://dashboard.heroku.com/new?button-url=https://heroku.com/deploy?template=https://github.com/prashu32/Mlobot"))],
                          [Button.url("Support",
-                                     url="https://t.me/TeleBotSupport")]
+                                     url="https://t.me/spamreporterr")]
                      ])
 
 
@@ -274,7 +274,7 @@ async def bot(event):
                 os.remove(media)
             except BaseException:
                 return await conv.send_message("Error!")
-        telebot = "BOT_PIC"
+        mlobot = "BOT_PIC"
         if Var.HEROKU_APP_NAME is not None:
             app = Heroku.app(Var.HEROKU_APP_NAME)
         else:
@@ -308,7 +308,7 @@ async def custom(event):
                 mssg = "`**HEROKU**:" "\nPlease setup your` **HEROKU_APP_NAME**"
                 return
             heroku_var = app.config()
-            heroku_var[telebot] = f"{themssg}"
+            heroku_var[mlobot] = f"{themssg}"
             mssg = "Changed the PMBot start message!!\n**Restarting now**, please give me a minute."
             await event.delete()
             await tgbot.send_message(event.chat_id, mssg)
@@ -320,7 +320,7 @@ async def custom(event):
           )  # pylint: disable=oof
 async def enablee(event):
     if event.sender_id == OWNER_ID:
-        telebot = "LOAD_MYBOT"
+        mlobot = "LOAD_MYBOT"
         if Var.HEROKU_APP_NAME is not None:
             app = Heroku.app(Var.HEROKU_APP_NAME)
         else:
