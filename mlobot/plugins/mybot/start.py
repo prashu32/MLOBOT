@@ -182,7 +182,7 @@ async def settings(event):
     await event.edit("Browse through the available options:",
                      buttons=[
                          [(Button.url("Repository", url="https://github.com/prashu32/Mlobot")),
-                          (Button.url("Deploy", url="https://dashboard.heroku.com/new?button-url=https://heroku.com/deploy?template=https://github.com/prashu32/Mlobot"))],
+                          (Button.url("Deploy", url="https://dashboard.heroku.com/new?button-url=https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fprashu32%2FMlobot&template=https%3A%2F%2Fgithub.com%2F"))],
                          [Button.url("Support",
                                      url="https://t.me/spamreporterr")]
                      ])
