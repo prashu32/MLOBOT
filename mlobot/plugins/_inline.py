@@ -68,7 +68,7 @@ elif Var.LOAD_MYBOT == "False":
         )
     )
 
-CUSTOM_HELP_EMOJI = os.environ.get("CUSTOM_HELP_EMOJI", "🌹")
+CUSTOM_HELP_EMOJI = os.environ.get("CUSTOM_HELP_EMOJI", "🚫")
 HELP_ROWS = int(os.environ.get("HELP_ROWS", 5))
 HELP_COLOUMNS = int(os.environ.get("HELP_COLOUMNS", 3))
 
@@ -252,7 +252,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
             await event.edit(
-                f"Oh, so you are here to spam 😤\nGoodbye.\nYour message has been read and successfully ignored."
+                f"Oh, so you are here to spam 😤\nGoodbye.\nYour message has been read and successfully ignored one msg for u BAAP SE BADMASHI NHI KRTE NIKAL BETA."
             )
             await borg(functions.contacts.BlockRequest(event.query.user_id))
             target = await event.client(GetFullUserRequest(event.query.user_id))
@@ -273,7 +273,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 "Menu Closed!!", buttons=[Button.inline("Re-open Menu", data="reopen")]
             )
         else:
-            reply_pop_up_alert = "Please get your own userbot from @TeleBotSupport "
+            reply_pop_up_alert = "Please get your own userbot from @MLO_USERBOT "
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"statcheck")))
@@ -370,11 +370,11 @@ def paginate_help(page_number, loaded_plugins, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "⫷ Previous", data="{}_prev({})".format(prefix, modulo_page)
+                    "🤛 Previous", data="{}_prev({})".format(prefix, modulo_page)
                 ),
-                custom.Button.inline("║ Close ║", data="close"),
+                custom.Button.inline("👊Close👊 ", data="close"),
                 custom.Button.inline(
-                    "Next ⫸", data="{}_next({})".format(prefix, modulo_page)
+                    "Next 🤜", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
