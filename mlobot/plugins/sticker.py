@@ -13,15 +13,15 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from userbot import CMD_HELP
-from userbot.uniborgConfig import Config
-from userbot.utils import *
+from mlobot import CMD_HELP
+from mlobot.uniborgConfig import Config
+from mlobot.utils import *
 
 KANGING_STR = [
-    "Using Witchery to kang this sticker...",
+    "Using Witchery to kang this sticker saar...",
     "Plagiarising hehe...",
-    "Inviting this sticker over to my pack...",
-    "Kanging this sticker...",
+    "Looking sexy Inviting this sticker over to my pack...",
+    "Kanging this sticker beta...",
     "Hey that's a nice sticker!\nMind if I kang?!..",
     "hehe me stel ur stikér\nhehe.",
     "Ay look over there (☉｡☉)!→\nWhile I kang this...",
@@ -33,8 +33,8 @@ KANGING_STR = [
 mlobot = Config.CUSTOM_STICKER_PACK_NAME
 
 
-@bot.on(admin_cmd(outgoing=True, pattern="kang"))
-@bot.on(sudo_cmd(pattern="kang", allow_sudo=True))
+@mlobot.on(admin_cmd(outgoing=True, pattern="kang"))
+@mlobot.on(sudo_cmd(pattern="kang", allow_sudo=True))
 async def kang(args):
     """ For .kang command, kangs stickers or creates new ones. """
     user = await bot.get_me()
@@ -98,11 +98,11 @@ async def kang(args):
                 # pack
                 emoji = splat[1]
 
-        packname = f"HB_{user.username}_Hellbot_{pack}"
+        packname = f"HB_{user.username}_Mlobot_{pack}"
         packnick = (
-            f"{hellbot} Vol.{pack}"
-            if hellbot
-            else f"@{user.username}'s HellBot Vol.{pack}"
+            f"{Mlobot} Vol.{pack}"
+            if Mlobot
+            else f"@{user.username}'s Mlobot Vol.{pack}"
         )
         cmd = "/newpack"
         file = io.BytesIO()
@@ -136,9 +136,9 @@ async def kang(args):
                     pack += 1
                     packname = f"HB_{user.username}_by_{user.username}_{pack}"
                     packnick = (
-                        f"{hellbot} Vol.{pack}"
-                        if hellbot
-                        else f"@{user.username}'s HellBot Vol.{pack}"
+                        f"{Mlobot} Vol.{pack}"
+                        if Mlobot
+                        else f"@{user.username}'s Mlobot Vol.{pack}"
                     )
                     await args.edit(
                         "`Switching to Pack "
@@ -288,8 +288,8 @@ async def resize_photo(photo):
     return image
 
 
-@bot.on(admin_cmd(outgoing=True, pattern="stkrinfo"))
-@bot.on(sudo_cmd(pattern="stkrinfo", allow_sudo=True))
+@mlobot.on(admin_cmd(outgoing=True, pattern="stkrinfo"))
+@mlobot.on(sudo_cmd(pattern="stkrinfo", allow_sudo=True))
 async def get_pack_info(event):
     if not event.is_reply:
         await eor(event, "`I can't fetch info from black hole!!!`")
