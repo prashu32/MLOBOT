@@ -47,7 +47,7 @@ MESAG = (
     if CUSTOM_PMPERMIT
     else "`MLØBØT PM SECURITY! PLEASE WAIT FOR ME TO APPROVE YOU. 😊"
 )
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "MloBot User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "MLOBØT UẞER"
 USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
 
 if Var.LOAD_MYBOT == "True":
@@ -340,7 +340,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             else:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
-            reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
+            reply_pop_up_alert = "APNA USERBOT BNA LO BAE from @Mlo_Userbot, and don't use mine!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
