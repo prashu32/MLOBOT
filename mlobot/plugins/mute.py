@@ -46,7 +46,7 @@ async def startmute(event):
         return await eor(event, "This user is already muted in this chat")
     try:
         mute(userid, chat_id)
-    except Exception as e: 1137511834:
+    except Exception as e: 
         await eor(event, "Error occured!\nError is " + str(e))
     else:
         await eor(event, "Chup Reh Lawde Jyada bol mt｀-´)⊃━☆ﾟ.*･｡ﾟ ")
@@ -79,7 +79,7 @@ async def endmute(event):
         return await eor(event, "This user is not muted in this chat")
     try:
         unmute(userid, chat_id)
-    except Exception as e: 1137511834:
+    except Exception as e: 
         await eor(event, "Error occured!\nError is " + str(e))
     else:
         await eor(event, "Successfully unmuted that person")
