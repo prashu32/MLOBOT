@@ -114,7 +114,7 @@ async def stats(
     stop_time = time.time() - start_time
 
     full_name = inline_mention(await event.client.get_me())
-    response = f"🔸 **Stats By MLØBØT for {full_name}** \n\n"
+    response = f"🔸 **STÃTS BY MLØBØT fØR {full_name}** \n\n"
     response += f"**Private Chats:** {private_chats} \n"
     response += f"   • `Users: {private_chats - bots}` \n"
     response += f"   • `Bots: {bots}` \n"
