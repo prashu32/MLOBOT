@@ -32,7 +32,7 @@ async def startgmute(event):
         return await eor(event, "This nigga is already gmuted")
     try:
         mute(userid, "gmute")
-    except Exception as e: 1137511834:
+    except Exception as e: 
         await eor(event, "Error occured!\nError is " + str(e))
     else:
         await eor(event, "Silence now. **Son can't speak now successfully muted**")
@@ -65,7 +65,7 @@ async def endgmute(event):
         return await eor(event, "This user is not gmuted")
     try:
         unmute(userid, "gmute")
-    except Exception as e: 1137511834:
+    except Exception as e: 
         await eor(event, "Error occured!\nError is " + str(e))
     else:
         await eor(event, "Successfully ungmuted the nigga")
