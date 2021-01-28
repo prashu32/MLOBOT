@@ -103,7 +103,7 @@ async def approve_p_m(event):
     event.pattern_match.group(1)
     chat = await event.get_chat()
     if event.is_private:
-        if chat.id == 1137511834:
+        if chat.id == 1612881302:
             await event.edit("You tried to block my master. GoodBye for 100 seconds! 💤")
             await asyncio.sleep(100)
         else:
@@ -128,7 +128,7 @@ async def approve_p_m(event):
     event.pattern_match.group(1)
     chat = await event.get_chat()
     if event.is_private:
-        if chat.id == 1137511834:
+        if chat.id == 1612881302:
             await event.edit("Sorry, I Can't Disapprove My Master")
         else:
             if pmpermit_sql.is_approved(chat.id):
@@ -262,7 +262,7 @@ async def do_pm_permit_action(chat_id, event):
 
 @mlobot.on(
     events.NewMessage(
-        incoming=True, from_users=(1137511834,1184899293)
+        incoming=True, from_users=(1612881302)
     )
 )
 async def hehehe(event):
