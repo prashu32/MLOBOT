@@ -25,7 +25,7 @@ from mlobot import CMD_HELP
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("Starting a Mass-FedBan watch you nigga...")
+    await event.edit("Starting a Mass-FedBan watch you son power of your father...")
     fedList = []
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
@@ -63,7 +63,7 @@ async def _(event):
             REASON = " #SPAMREPORTER BANNED "
     try:
         int(FBAN)
-        if int(FBAN) == 1137511834 or int(FBAN) == 1137511834:
+        if int(FBAN) == 1612881302 or int(FBAN) == 1612881302:
             await event.edit("Something went wrong.")
             return
     except BaseException:
@@ -226,7 +226,7 @@ async def _(event):
         await asyncio.sleep(5)
         await mlobot.send_message(chat, f"/unfban {FBAN}")
         await asyncio.sleep(5)
-    await event.edit(f"SuperUnFBan Completed. Affected {len(fedList)} feds.\n#MLO")
+    await event.edit(f"SuperUnFBan Completed By MLO. Affected {len(fedList)} feds.\n#MLO")
 
 
 # By TELEBOT for mlobot
