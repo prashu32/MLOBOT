@@ -67,20 +67,20 @@ async def amireallyalive(alive):
     (end - start).microseconds / 1000
     uptime = get_readable_time((time.time() - StartTime))
     if ALV_PIC:
-        tele = f"**Welcøme Tø Mløbøt **\n\n"
+        tele = f"**WELCØME TØ MlØBØT SIR😈 **\n\n"
         tele += f"`{CUSTOM_ALIVE}`\n\n"
         tele += (
             f"{telemoji} **Telethon version**: `1.17`\n{telemoji} **Python**: `3.8.3`\n"
         )
         tele += f"{telemoji} **MloBot Version**: `{telever}`\n"
-        tele += f"{telemoji} **More Info**: @Mlo_Userbot\n"
+        tele += f"{telemoji} **More Info**: @MLO_USERBOT\n"
         tele += f"{telemoji} **Sudo** : `{sudo}`\n"
         tele += f"{telemoji} **MloBot Uptime**: `{uptime}`\n"
-        tele += f"{telemoji} **Database Status**: `All OK Saar👌!`\n"
+        tele += f"{telemoji} **Database Status**: `All OK SAAR JI👌!`\n"
         tele += (
-            f"{telemoji} **My King** : [{DEFAULTUSER}](tg://user?id={myid})\n\n"
+            f"{telemoji} **MY ROYAL KING** : [{DEFAULTUSER}](tg://user?id={myid})\n\n"
         )
-        tele += "    [✨ GitHub Repository ✨](https://github.com/prashu32/Mlobot)"
+        tele += "    [✨🚸GitHub Repository🚸✨](https://github.com/prashu32/Mlobot)"
         await alive.get_chat()
         await alive.delete()
         """ For .alive command, check if the bot is running.  """
@@ -98,16 +98,16 @@ async def amireallyalive(alive):
         sticker.seek(0)
         await borg.send_message(
             alive.chat_id,
-            f"**Welcøme Tø Mløbøt  **\n\n"
+            f"**WELCØME TØ MlØBØT SIR😈 **\n\n"
             f"`{CUSTOM_ALIVE}`\n\n"
             f"{telemoji} **Telethon version**: `1.17`\n{telemoji} **Python**: `3.8.3`\n"
             f"{telemoji} **MloBot Version**: `{telever}`\n"
-            f"{telemoji} **More Info**: @Mlo_userbot\n"
+            f"{telemoji} **More Info**: @MLO_USERBOT\n"
             f"{telemoji} **Sudo** : `{sudo}`\n"
             f"{telemoji} **MloBot Uptime**: `{uptime}`\n"
-            f"{telemoji} **Database Status**: `All OK saar👌!`\n"
-            f"{telemoji} **My King** : [{DEFAULTUSER}](tg://user?id={myid})\n\n"
-            "    [✨ GitHub Repository ✨](https://github.com/prashu32/Mlobot)",
+            f"{telemoji} **Database Status**: `All OK SAAR JI👌!`\n"
+            f"{telemoji} **MY ROYAL KING** : [{DEFAULTUSER}](tg://user?id={myid})\n\n"
+            "    [✨🚸GitHub Repository🚸✨](https://github.com/prashu32/Mlobot)",
             link_preview=False,
         )
         await borg.send_file(alive.chat_id, file=sticker)

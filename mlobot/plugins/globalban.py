@@ -110,8 +110,8 @@ async def gspider(rk):
     except BaseException:
         return await rkp.edit("**Error! Unknown user.**")
     if user:
-        if user.id == 1137511834:
-            return await rkp.edit("**Error! cant gban this user baap h wo.**")
+        if user.id == 1612881302:
+            return await rkp.edit("**Error! cant gban this user baap h Wo sbka or Mera Jaan.**")
         try:
             from mlobot.plugins.sql_helper.gmute_sql import gmute
         except BaseException:
@@ -174,7 +174,7 @@ async def gspider(rk):
     except BaseException:
         return await rkp.edit(f"**Error! Unknown user.**")
     if user:
-        if user.id == 1137511834:
+        if user.id == 1612881302:
             return await rkp.edit(f"**Error! cant ungban this user.**")
         try:
             from mlobot.plugins.sql_helper.gmute_sql import ungmute

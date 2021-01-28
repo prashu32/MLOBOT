@@ -41,7 +41,7 @@
 # String Session
 ### Repl
 
-[![Run on Repl.it](https://repl.it/badge/github/mbbslove/mlo)](https://repl.it/@Mbbslove/mlo)
+[![Run on Repl.it](https://repl.it/@prashu32/prashu32mlo#main.py)
 
 # Using Heroku
 
